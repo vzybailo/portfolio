@@ -1,0 +1,13 @@
+{
+  "menu": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  }
+}

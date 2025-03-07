@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import './variables';
+@import './mixins';
+
+[data-theme='dark'] {
+  background-color: $dark;
+  color: $light;
+
+  a {
+    color: $light;
+  }
+}
+
+[data-theme='light'] {
+  background-color: $light;
+  color: $dark;
+
+  a {
+    color: $gray;
+  }
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
+  color: $gray;
+  font-family: monospace;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}

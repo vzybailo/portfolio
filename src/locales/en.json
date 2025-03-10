@@ -1,5 +1,6 @@
 {
   "menu": {
+    "main": "Main",
     "about": "About",
     "projects": "Projects",
     "contact": "Contact"

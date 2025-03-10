@@ -15,11 +15,12 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const menuRoutes = computed(() =>
-  router.options.routes.map((route) => ({
-    path: route.path,
-    name: route.name,
-    title: route.meta?.title || route.name,
-  })),
+  router.options.routes
+    .filter(route => route.name && route.path !== '/') 
+    .map(route => ({
+      path: route.path,
+      name: route.name
+    }))
 )
 </script>
 

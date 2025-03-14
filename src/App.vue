@@ -1,17 +1,21 @@
 <template>
   <div class="wrapper">
-    <Header />
+    <WelcomeHeader v-if="isHomePage"/>
+    <Header v-else />
     <router-view />
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import Header from './components/layout/Header.vue'
+import WelcomeHeader from './components/layout/WelcomeHeader.vue'
 
-// onMounted(() => {
-//   document.body.setAttribute('data-theme', 'light')
-// })
+const route = useRoute()
+const isHomePage = computed(() => route.path === '/')
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

@@ -10,5 +10,8 @@
     "email": "Email",
     "message": "Message",
     "send": "Send"
+  },
+  "welcome": {
+    "name": "Vitali Zybaila"
   }
 }

@@ -22,13 +22,13 @@ const socials = [
 
 <style lang="scss">
 .socials__icon {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     margin-right: 5px;
     transition: .3s;
 
     &:hover {
-        fill: #467caf;
+        fill: rgb(84, 165, 138);
         transition: .3s;
     }
 }

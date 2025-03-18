@@ -10,9 +10,15 @@
     </label>
     <label for="message" class="flex flex-col">
       {{ $t('form.message') }}
-      <textarea class="form__input bg-white mb-4" id="message" v-model="formData.message"> </textarea>
+      <textarea class="form__input bg-white mb-4" id="message" v-model="formData.message">
+      </textarea>
     </label>
-    <button class="bg-cyan-500 p-2 text-white transition hover:bg-sky-700 cursor-pointer uppercase" type="submit">{{ $t('form.send') }}</button>
+    <button
+      class="bg-cyan-500 p-2 text-white transition hover:bg-sky-700 cursor-pointer uppercase"
+      type="submit"
+    >
+      {{ $t('form.send') }}
+    </button>
   </form>
 </template>
 
@@ -36,7 +42,6 @@ const sendForm = () => {
   formData.value.email = ''
   formData.value.message = ''
 }
-
 </script>
 
 <style lang="scss">

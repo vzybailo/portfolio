@@ -2,7 +2,9 @@
   <nav class="nav">
     <ul class="nav__list flex">
       <li class="nav__item" v-for="route in menuRoutes" :key="route.name">
-        <router-link :to="route.path">{{ $t(route.name) || route.name }}</router-link>
+        <router-link class="nav__link" :to="route.path">{{
+          $t(route.name) || route.name
+        }}</router-link>
       </li>
     </ul>
   </nav>
@@ -16,11 +18,11 @@ const router = useRouter()
 
 const menuRoutes = computed(() =>
   router.options.routes
-    .filter(route => route.name && route.path !== '/') 
-    .map(route => ({
+    .filter((route) => route.name && route.path !== '/')
+    .map((route) => ({
       path: route.path,
-      name: route.name
-    }))
+      name: route.name,
+    })),
 )
 </script>
 

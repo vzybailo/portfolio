@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @import './variables';
 @import './mixins';
 
@@ -40,4 +40,5 @@ a {
 .wrapper {
   width: 1000px;
   margin: 0 auto;
+  max-width: 100%;
 }

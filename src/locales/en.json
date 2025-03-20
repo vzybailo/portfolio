@@ -9,7 +9,12 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "validation": {
+      "required": "This field is required",
+      "minLength": "Minimum length is {min} characters",
+      "email": "Enter a valid email"
+    }
   },
   "name": "Vitali Zybaila",
   "copyright": "All rights reserved."

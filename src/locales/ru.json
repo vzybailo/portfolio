@@ -5,8 +5,14 @@
     "projects": "Проекты",
     "contact": "Контакты"
   },
+  "page": {
+    "about": "Обо мне",
+    "projects": "Мои проекты",
+    "contact": "Контакты"
+  },
   "form": {
-    "name": "Имя",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
     "email": "Почта",
     "message": "Сообщение",
     "send": "Отправить",

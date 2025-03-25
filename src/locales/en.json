@@ -5,8 +5,14 @@
     "projects": "Projects",
     "contact": "Contact"
   },
+  "page": {
+    "about": "About me",
+    "projects": "My projects",
+    "contact": "Let's connect"
+  },
   "form": {
-    "name": "Name",
+    "firstName": "First Name",
+    "lastName": "Last Name",
     "email": "Email",
     "message": "Message",
     "send": "Send",

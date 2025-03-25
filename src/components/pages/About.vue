@@ -1,21 +1,11 @@
 <template>
   <div class="about">
-    <div class="title">
-      <h2 class="title__name">About me</h2>
-      <span class="title__subname">about</span>
-    </div>
+    <PageTitle :title="$t('page.about')" />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import PageTitle from '../layout/PageTitle.vue'
+</script>
 
-<style>
-.title {
-  text-align: center;
-  position: relative;
-}
-.title__name {
-    color: darkslategrey;
-    font-size: 46px;
-}
-</style>
+<style></style>

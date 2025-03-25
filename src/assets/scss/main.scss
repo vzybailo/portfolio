@@ -2,6 +2,16 @@
 @import './variables';
 @import './mixins';
 
+@font-face {
+  font-family: 'JetBrains';
+  src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.woff') format('woff');
+}
+
 [data-theme='dark'] {
   background-color: $dark;
   color: $light;
@@ -21,13 +31,15 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: #f5f5f5;
+  font-family: 'JetBrains';
+  font-size: 14px;
   color: $gray;
-  font-family: monospace;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+h2 {
+  font-family: 'Poppins', monospace;
 }
 ul {
   margin: 0;
@@ -41,4 +53,7 @@ a {
   width: 1000px;
   margin: 0 auto;
   max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

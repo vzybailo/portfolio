@@ -14,7 +14,7 @@
             <div class="welcome__position">Frontend Developer</div>
           </div>
           <div class="welcome__socials">
-            <Socials/>
+            <Socials />
           </div>
         </div>
         <div class="welcome__nav">
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="welcome__copyright flex justify-center">
-      © {{ currentYear }} {{ $t('name') }}. {{ $t('copyright') }}
+      <Copyright />
     </div>
   </div>
 </template>
@@ -36,11 +36,10 @@ import DarkLightBtn from './DarkLightBtn.vue'
 import LangSwitcher from './LangSwitcher.vue'
 import Icon from '../common/Icon.vue'
 import Socials from './Socials.vue'
-
-let currentYear = new Date().getFullYear()
+import Copyright from './Copyright.vue'
 
 defineProps({
-  isHomePage: Boolean
+  isHomePage: Boolean,
 })
 </script>
 
@@ -59,8 +58,8 @@ defineProps({
   padding: 20px;
 }
 .welcome__name {
-    font-size: 24px;
-    font-weight: 700;
+  font-size: 24px;
+  font-weight: 700;
 }
 .welcome__nav {
   border-top: 1px #d5d5d5 solid;
@@ -101,7 +100,7 @@ defineProps({
   transition: 0.3s;
 
   &:hover {
-    background-color: cadetblue;
+    background-color: #0057B8;
     color: #fff;
     transition: 0.3s;
   }
@@ -113,6 +112,6 @@ defineProps({
   cursor: pointer;
 }
 .welcome__socials {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 </style>

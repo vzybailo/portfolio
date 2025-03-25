@@ -1,25 +1,47 @@
 <template>
-  <form class="flex flex-col mb-4" v-on:submit.prevent="sendForm">
-    <label for="name" class="flex flex-col  mb-4">
-      {{ $t('form.name') }}
-      <input class="form__input bg-white" id="name" type="text" v-model="formData.name" @blur="v$.name.$touch()"/>
-      <span  class="form__error" v-if="v$.name.$error">{{ getErrorMessage('name') }}</span>
-    </label>
-    <label for="email" class="flex flex-col  mb-4">
+  <form class="form flex flex-col mb-4" v-on:submit.prevent="sendForm">
+    <div class="full__name flex justify-between">
+      <label for="firstName" class="flex flex-col mb-4 form__label">
+        {{ $t('form.firstName') }}
+        <input
+          class="form__input bg-white"
+          id="firstName"
+          type="text"
+          v-model="formData.firstName"
+          @blur="v$.firstName.$touch()"
+        />
+        <span class="form__error" v-if="v$.firstName.$error">{{
+          getErrorMessage('firstName')
+        }}</span>
+      </label>
+      <label for="lastName" class="flex flex-col mb-4 form__label">
+        {{ $t('form.lastName') }}
+        <input class="form__input bg-white" id="lastName" type="text" v-model="formData.lastName" />
+      </label>
+    </div>
+    <label for="email" class="flex flex-col mb-4">
       {{ $t('form.email') }}
-      <input class="form__input bg-white" id="email" type="email" v-model="formData.email" @blur="v$.email.$touch()"/>
-      <span  class="form__error" v-if="v$.email.$error">{{ getErrorMessage('email') }}</span>
+      <input
+        class="form__input bg-white"
+        id="email"
+        type="email"
+        v-model="formData.email"
+        @blur="v$.email.$touch()"
+      />
+      <span class="form__error" v-if="v$.email.$error">{{ getErrorMessage('email') }}</span>
     </label>
-    <label for="message" class="flex flex-col  mb-4">
+    <label for="message" class="flex flex-col mb-4">
       {{ $t('form.message') }}
-      <textarea class="form__input bg-white" id="message" v-model="formData.message" @blur="v$.message.$touch()">
+      <textarea
+        class="form__input bg-white"
+        id="message"
+        v-model="formData.message"
+        @blur="v$.message.$touch()"
+      >
       </textarea>
-      <span  class="form__error" v-if="v$.message.$error">{{ getErrorMessage('message') }}</span>
+      <span class="form__error" v-if="v$.message.$error">{{ getErrorMessage('message') }}</span>
     </label>
-    <button
-      class="bg-cyan-500 p-2 text-white transition hover:bg-sky-700 cursor-pointer uppercase"
-      type="submit"
-    >
+    <button class="form__btn text-white transition cursor-pointer uppercase" type="submit">
       {{ $t('form.send') }}
     </button>
   </form>
@@ -34,15 +56,15 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const formData = ref({
-  name: '',
+  firstName: '',
   email: '',
   message: '',
 })
 
 const rules = {
-  name: { required, minLength: minLength(3) },
+  firstName: { required, minLength: minLength(3) },
   email: { required, email },
-  message: { required, minLength: minLength(10) }
+  message: { required, minLength: minLength(10) },
 }
 const v$ = useVuelidate(rules, formData)
 const getErrorMessage = (field) => {
@@ -50,7 +72,8 @@ const getErrorMessage = (field) => {
 
   const error = v$.value[field].$errors[0]
   if (error.$validator === 'required') return t('form.validation.required')
-  if (error.$validator === 'minLength') return t('form.validation.minLength', { min: error.$params.min })
+  if (error.$validator === 'minLength')
+    return t('form.validation.minLength', { min: error.$params.min })
   if (error.$validator === 'email') return t('form.validation.email')
 
   return ''
@@ -63,24 +86,44 @@ const sendForm = async () => {
     return
   }
 
-  // Если всё ок — отправляем данные
-  console.log('Form Data:', formData.value)
-  alert('Form submitted successfully!')
-  formData.value = { name: '', email: '', message: '' }
-  v$.value.$reset() // Сбрасываем ошибки
+  formData.value = { firstName: '', email: '', message: '' }
+  v$.value.$reset()
 }
 </script>
 
 <style lang="scss">
+.form__label {
+  width: 100%;
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
 .form__input {
   outline: none;
   border: 0;
-  border-radius: 3px;
-  padding: 10px;
+  padding: 5px;
   margin-top: 5px;
+  background-color: #fafafa;
+  border: 1px solid #a9a9a9;
 }
 .form__error {
   color: #d42f2f;
-  font-size: 14px;
+  font-size: 10px;
+}
+.form__btn {
+  color: #000;
+  border: 3px solid #2eab94;
+  width: 100px;
+  margin: 0 auto;
+  transition: 0.3s;
+  padding: 5px 10px;
+
+  &:hover {
+    background: #2eab94;
+    color: #fff;
+    transition: 0.3s;
+  }
 }
 </style>

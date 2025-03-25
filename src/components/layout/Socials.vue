@@ -1,40 +1,39 @@
 <template>
-    <ul class="socials__list flex justify-center items-center">
-        <li class="socials__item" v-for="social in socials" :key="social.title">
-            <a :href="social.link"  target="blank" class="socials__link">
-                <Icon :name="social.title" class="socials__icon"/>
-            </a>
-        </li>
-    </ul>
+  <ul class="socials__list flex justify-center items-center">
+    <li class="socials__item" v-for="social in socials" :key="social.title">
+      <a :href="social.link" target="blank" class="socials__link">
+        <Icon :name="social.title" class="socials__icon" />
+      </a>
+    </li>
+  </ul>
 </template>
 
 <script setup>
-import Icon from '../common/Icon.vue';
+import Icon from '../common/Icon.vue'
 
 const socials = [
-    { title: 'linkedin', link: 'https://www.linkedin.com/zybailo' },
-    { title: 'github', link: 'https://github.com/vzybailo' },
-    { title: 'youtube', link: 'https://www.youtube.com/@zybailo' },
-    { title: 'instagram', link: 'https://www.instagram.com/vzybaila' }
+  { title: 'linkedin', link: 'https://www.linkedin.com/zybailo' },
+  { title: 'github', link: 'https://github.com/vzybailo' },
+  { title: 'youtube', link: 'https://www.youtube.com/@zybailo' },
+  { title: 'instagram', link: 'https://www.instagram.com/vzybaila' },
 ]
-
 </script>
 
 <style lang="scss">
 .socials__icon {
-    width: 32px;
-    height: 32px;
-    margin-right: 5px;
-    transition: .3s;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  transition: 0.3s;
 
-    &:hover {
-        fill: rgb(84, 165, 138);
-        transition: .3s;
-    }
+  &:hover {
+    fill: #0057B8;
+    transition: 0.3s;
+  }
 }
 .socials__item:last-child {
-    .socials__icon {
-        margin-right: 0;
-    }
+  .socials__icon {
+    margin-right: 0;
+  }
 }
 </style>

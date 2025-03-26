@@ -12,7 +12,7 @@
 import Icon from '../common/Icon.vue'
 
 const socials = [
-  { title: 'linkedin', link: 'https://www.linkedin.com/zybailo' },
+  { title: 'linkedin', link: 'https://www.linkedin.com/in/zybailo/' },
   { title: 'github', link: 'https://github.com/vzybailo' },
   { title: 'youtube', link: 'https://www.youtube.com/@zybailo' },
   { title: 'instagram', link: 'https://www.instagram.com/vzybaila' },

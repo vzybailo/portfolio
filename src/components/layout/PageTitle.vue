@@ -15,7 +15,6 @@ defineProps({
 
 <style lang="scss">
 .title {
-  text-align: center;
   position: relative;
   margin-bottom: 40px;
   font-size: 36px;

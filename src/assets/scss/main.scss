@@ -8,21 +8,24 @@
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('../fonts/Poppins-Regular.woff') format('woff');
+  font-family: 'Battle';
+  src: url('../fonts/undertale_battle_font.woff') format('woff');
 }
 
 [data-theme='dark'] {
   background-color: $dark;
-  color: $light;
+  color: $white;
 
   a {
-    color: $light;
+    color: $white;
+  }
+  .form__btn {
+    color: $white;
   }
 }
 
 [data-theme='light'] {
-  background-color: $light;
+  background-color: $white;
   color: $dark;
 
   a {
@@ -39,7 +42,7 @@ body {
     color 0.3s ease;
 }
 h2 {
-  font-family: 'Poppins', monospace;
+  font-family: 'Battle';
 }
 ul {
   margin: 0;

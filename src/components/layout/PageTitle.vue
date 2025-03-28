@@ -18,6 +18,6 @@ defineProps({
   position: relative;
   margin-bottom: 40px;
   font-size: 36px;
-  color: $titleColor;
+  color: $blue;
 }
 </style>

@@ -100,7 +100,7 @@ defineProps({
   transition: 0.3s;
 
   &:hover {
-    background-color: #0057B8;
+    background-color: #00AAAA;
     color: #fff;
     transition: 0.3s;
   }

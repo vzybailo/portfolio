@@ -4,7 +4,7 @@
       <label for="firstName" class="flex flex-col mb-4 form__label">
         {{ $t('form.firstName') }}
         <input
-          class="form__input bg-white"
+          class="form__input"
           id="firstName"
           type="text"
           v-model="formData.firstName"
@@ -16,13 +16,13 @@
       </label>
       <label for="lastName" class="flex flex-col mb-4 form__label">
         {{ $t('form.lastName') }}
-        <input class="form__input bg-white" id="lastName" type="text" v-model="formData.lastName" />
+        <input class="form__input" id="lastName" type="text" v-model="formData.lastName" />
       </label>
     </div>
     <label for="email" class="flex flex-col mb-4">
       {{ $t('form.email') }}
       <input
-        class="form__input bg-white"
+        class="form__input"
         id="email"
         type="email"
         v-model="formData.email"
@@ -33,7 +33,7 @@
     <label for="message" class="flex flex-col mb-4">
       {{ $t('form.message') }}
       <textarea
-        class="form__input bg-white"
+        class="form__input"
         id="message"
         v-model="formData.message"
         @blur="v$.message.$touch()"
@@ -105,24 +105,23 @@ const sendForm = async () => {
   border: 0;
   padding: 5px;
   margin-top: 5px;
-  background-color: #fafafa;
-  border: 1px solid #a9a9a9;
+  border: 1px solid $lightGray;
 }
 .form__error {
-  color: #d42f2f;
-  font-size: 10px;
+  color: $lightRed;
+  font-size: 12px;
 }
 .form__btn {
-  color: #000;
-  border: 3px solid #2eab94;
+  color: $black;
+  border: 3px solid $orange;
   width: 100px;
   margin: 0 auto;
   transition: 0.3s;
   padding: 5px 10px;
 
   &:hover {
-    background: #2eab94;
-    color: #fff;
+    background: $orange;
+    color: $white;
     transition: 0.3s;
   }
 }

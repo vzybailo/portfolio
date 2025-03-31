@@ -1,6 +1,6 @@
 <template>
   <router-link to="/">
-    <Icon class="logo" name="v-button" />
+    <Icon class="logo" name="logo" />
   </router-link>
 </template>
 

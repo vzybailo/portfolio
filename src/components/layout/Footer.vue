@@ -13,9 +13,5 @@ import Socials from './Socials.vue'
 <style lang="scss">
 .footer {
   padding: 10px 0;
-
-  .socials__icon {
-    width: 26px;
-  }
 }
 </style>

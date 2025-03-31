@@ -21,8 +21,8 @@ const socials = [
 
 <style lang="scss">
 .socials__icon {
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
   margin-right: 5px;
   transition: 0.3s;
 

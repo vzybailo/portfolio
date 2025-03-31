@@ -113,7 +113,7 @@ const sendForm = async () => {
 }
 .form__btn {
   color: $black;
-  border: 3px solid $orange;
+  border: 2px solid $orange;
   width: 100px;
   margin: 0 auto;
   transition: 0.3s;

@@ -5,7 +5,7 @@
     <main class="content">
       <router-view />
     </main>
-    <Footer v-if="!isHomePage"/>
+    <Footer v-if="!isHomePage" />
   </div>
 </template>
 

@@ -27,7 +27,7 @@ const socials = [
   transition: 0.3s;
 
   &:hover {
-    fill: #0057B8;
+    fill: #0057b8;
     transition: 0.3s;
   }
 }

@@ -7,7 +7,7 @@
         <div class="contact__descr-text">
           <p>{{ $t('contact.text') }}</p>
           <div class="contact__email flex items-center">
-            <Icon class="contact__email-icon" name="email"/>
+            <Icon class="contact__email-icon" name="email" />
             <a href="mailto:vitalizybailo@gmail.com">vitalizybailo@gmail.com</a>
           </div>
           <p>{{ $t('contact.textSecond') }}</p>
@@ -30,20 +30,20 @@ import Icon from '../common/Icon.vue'
 
 <style lang="scss">
 .contact__descr {
-    width: 50%;
-    margin-right: 30px;
+  width: 50%;
+  margin-right: 30px;
 }
 .contact__form-title {
   margin-bottom: 30px;
 }
 .contact__descr-title {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 .contact__descr-text {
-    p {
-      margin-bottom: 10px;
-    }
+  p {
+    margin-bottom: 10px;
+  }
 }
 .contact {
   .socials__list {
@@ -51,9 +51,9 @@ import Icon from '../common/Icon.vue'
   }
 }
 .contact__email-icon {
-    width: 26px;
-    height: 26px;
-    margin-right: 10px;
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
 }
 .contact__email {
   margin-bottom: 10px;

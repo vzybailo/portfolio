@@ -20,13 +20,17 @@
       "required": "This field is required",
       "minLength": "Minimum length is {min} characters",
       "email": "Enter a valid email"
+    },
+    "status": {
+      "success": "Email sent successfully!",
+      "fail": "Error sending email:"
     }
   },
   "name": "Vitali Zybaila",
   "copyright": "All rights reserved.",
   "contact": {
     "title": "Get in Touch",
-    "text": "If you need help building or improving a web project, have a collaboration idea, or just have questions – I’m always available!", 
+    "text": "If you need help building or improving a web project, have a collaboration idea, or just have questions – I’m always available!",
     "textSecond": "You can reach me via email or social media, or use the form on the right to send me a message directly. I try to respond as quickly as possible.",
     "textWait": "Looking forward to hearing from you! 🚀"
   }

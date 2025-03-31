@@ -41,6 +41,7 @@
       </textarea>
       <span class="form__error" v-if="v$.message.$error">{{ getErrorMessage('message') }}</span>
     </label>
+    <span v-if="isShowStatus" class="mb-2" :class="statusMessage.success ? 'text-green-500' : 'text-red-500'">{{ statusMessage.success || statusMessage.fail }}</span>
     <button class="form__btn text-white transition cursor-pointer uppercase" type="submit">
       {{ $t('form.send') }}
     </button>
@@ -48,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import useVuelidate from '@vuelidate/core'
 import { required, minLength, email } from '@vuelidate/validators'
 import { useI18n } from 'vue-i18n'
@@ -66,7 +67,9 @@ const rules = {
   email: { required, email },
   message: { required, minLength: minLength(10) },
 }
+
 const v$ = useVuelidate(rules, formData)
+
 const getErrorMessage = (field) => {
   if (!v$.value[field].$error) return ''
 
@@ -79,16 +82,42 @@ const getErrorMessage = (field) => {
   return ''
 }
 
+const statusMessage = ref({
+  success: '',
+  fail: ''
+})
+
 const sendForm = async () => {
   const isValid = await v$.value.$validate()
-  if (!isValid) {
-    console.log('Validation failed')
-    return
+
+  if (!isValid) return
+
+  try {
+    const response = await fetch('http://localhost:3000/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: formData.value.firstName,
+        email: formData.value.email,
+        message: formData.value.message
+      })
+    })
+
+    if (!response.ok) throw new Error('Failed to send email')
+
+    statusMessage.value.success = `✅ ${t('form.status.success')}`
+    formData.value = { firstName: '', email: '', message: '' }
+    setTimeout(() => (statusMessage.value = ''), 5000)
+    statusMessage.value.fail = "" 
+  } catch (error) {
+    statusMessage.value.fail = `❌ ${t('form.status.fail')} ` + error.message
+    statusMessage.value.success = "" 
   }
 
-  formData.value = { firstName: '', email: '', message: '' }
   v$.value.$reset()
 }
+
+const isShowStatus = computed(() => statusMessage.value.success !== "" || statusMessage.value.fail !== "")
 </script>
 
 <style lang="scss">

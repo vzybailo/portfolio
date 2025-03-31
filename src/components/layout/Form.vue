@@ -41,7 +41,12 @@
       </textarea>
       <span class="form__error" v-if="v$.message.$error">{{ getErrorMessage('message') }}</span>
     </label>
-    <span v-if="isShowStatus" class="mb-2" :class="statusMessage.success ? 'text-green-500' : 'text-red-500'">{{ statusMessage.success || statusMessage.fail }}</span>
+    <span
+      v-if="isShowStatus"
+      class="mb-2"
+      :class="statusMessage.success ? 'text-green-500' : 'text-red-500'"
+      >{{ statusMessage.success || statusMessage.fail }}</span
+    >
     <button class="form__btn text-white transition cursor-pointer uppercase" type="submit">
       {{ $t('form.send') }}
     </button>
@@ -84,7 +89,7 @@ const getErrorMessage = (field) => {
 
 const statusMessage = ref({
   success: '',
-  fail: ''
+  fail: '',
 })
 
 const sendForm = async () => {
@@ -99,8 +104,8 @@ const sendForm = async () => {
       body: JSON.stringify({
         firstName: formData.value.firstName,
         email: formData.value.email,
-        message: formData.value.message
-      })
+        message: formData.value.message,
+      }),
     })
 
     if (!response.ok) throw new Error('Failed to send email')
@@ -108,16 +113,18 @@ const sendForm = async () => {
     statusMessage.value.success = `✅ ${t('form.status.success')}`
     formData.value = { firstName: '', email: '', message: '' }
     setTimeout(() => (statusMessage.value = ''), 5000)
-    statusMessage.value.fail = "" 
+    statusMessage.value.fail = ''
   } catch (error) {
     statusMessage.value.fail = `❌ ${t('form.status.fail')} ` + error.message
-    statusMessage.value.success = "" 
+    statusMessage.value.success = ''
   }
 
   v$.value.$reset()
 }
 
-const isShowStatus = computed(() => statusMessage.value.success !== "" || statusMessage.value.fail !== "")
+const isShowStatus = computed(
+  () => statusMessage.value.success !== '' || statusMessage.value.fail !== '',
+)
 </script>
 
 <style lang="scss">

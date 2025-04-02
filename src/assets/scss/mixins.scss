@@ -1,0 +1,12 @@
+@mixin btn {
+  color: $black;
+  border: 2px solid $orange;
+  transition: 0.3s;
+  padding: 5px 10px;
+
+  &:hover {
+    background: $orange;
+    color: $white;
+    transition: 0.3s;
+  }
+}

@@ -33,5 +33,8 @@
     "text": "If you need help building or improving a web project, have a collaboration idea, or just have questions – I’m always available!",
     "textSecond": "You can reach me via email or social media, or use the form on the right to send me a message directly. I try to respond as quickly as possible.",
     "textWait": "Looking forward to hearing from you! 🚀"
+  },
+  "projects": {
+    "githubFinder": "An application that allows you to find a user by their username and display all their repositories. Uses the GitHub API to fetch data."
   }
 }

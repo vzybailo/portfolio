@@ -148,17 +148,9 @@ const isShowStatus = computed(
   font-size: 12px;
 }
 .form__btn {
-  color: $black;
-  border: 2px solid $orange;
+  @include btn;
+
   width: 100px;
   margin: 0 auto;
-  transition: 0.3s;
-  padding: 5px 10px;
-
-  &:hover {
-    background: $orange;
-    color: $white;
-    transition: 0.3s;
-  }
 }
 </style>

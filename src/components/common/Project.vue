@@ -10,11 +10,11 @@
         </li>
       </ul>
       <div class="project__btns flex">
-        <a :href="linkGithub" target="blank" class="project__btn flex items-center">
+        <a v-if="linkGithub" :href="linkGithub" target="blank" class="project__btn flex items-center">
           <Icon class="project__btn-icon" name="github-btn"/>
           <span>GitHub</span>
         </a>
-        <a :href="linkLive" target="blank" class="project__btn flex items-center">
+        <a v-if="linkLive" :href="linkLive" target="blank" class="project__btn flex items-center">
           <Icon class="project__btn-icon" name="play"/>
           <span>Live Demo</span>
         </a>

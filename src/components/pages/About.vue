@@ -2,10 +2,13 @@
   <div class="about">
     <PageTitle :title="$t('page.about')" />
     <div class="about__top flex">
-      <img src="../../assets/images/about-img.jpg" alt="" class="about__img">
+      <img src="../../assets/images/about.jpg" alt="" class="about__img mr-6">
       <div class="about__descr">
-        <h2 class="about__title">I'm Vitali. I'm a frontend developer.</h2>
-        <div class="about__text"></div>
+        <div class="flex flex-col text-[36px] mb-12">
+          <span>{{ $t('about.titleFirst') }}</span>
+          <span v-html="highlightedSecondTitle"></span>
+        </div>
+        <div class="text-l">{{ $t('about.text') }}</div>
       </div>
     </div>
   </div>
@@ -13,11 +16,29 @@
 
 <script setup>
 import PageTitle from '../layout/PageTitle.vue'
+import { useI18n } from 'vue-i18n'
+import { ref, watch, computed } from 'vue'
+
+const { t, locale } = useI18n()
+
+const titleSecond = ref(t('about.titleSecond'))
+const highlight = ref(t('about.highlight'))
+
+watch(() => locale.value, () => {
+  titleSecond.value = t('about.titleSecond')
+  highlight.value = t('about.highlight')
+})
+
+const highlightedSecondTitle = computed(() => {
+  return titleSecond.value.replace(
+    new RegExp(`(${highlight.value})`, 'iu'),
+    `<span style="background-color: #C4E538; padding: 2px 4px; border-radius: 4px;">$1</span>`
+  )
+})
 </script>
 
 <style>
 .about__img {
   width: 50%;
-  filter: opacity(0.5);
 }
 </style>

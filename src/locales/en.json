@@ -36,5 +36,11 @@
   },
   "projects": {
     "githubFinder": "An application that allows you to find a user by their username and display all their repositories. Uses the GitHub API to fetch data."
+  },
+  "about": {
+    "titleFirst": "I Break Things.",
+    "titleSecond": "Then Fix Them With Code.",
+    "highlight": "Fix",
+    "text": "Hi, I’m Vitaly. Originally from a small village, now I’m living in the USA and making the web a better place one website at a time. I’ve been a frontend developer since 2019, focusing on clean, functional code and user-friendly designs. I’m passionate about building websites that not only look great but also work perfectly. Let’s create something amazing together!"
   }
 }

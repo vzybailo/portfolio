@@ -17,7 +17,7 @@ defineProps({
 .title {
   position: relative;
   margin-bottom: 40px;
-  font-size: 36px;
-  color: $blue;
+  font-size: 26px;
+  color: $pink;
 }
 </style>

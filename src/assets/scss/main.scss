@@ -12,6 +12,11 @@
   src: url('../fonts/undertale_battle_font.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'PresStart';
+  src: url('../fonts/PressStart2P-Regular.woff') format('woff');
+}
+
 [data-theme='dark'] {
   background-color: $dark;
   color: $white;
@@ -42,7 +47,8 @@ body {
     color 0.3s ease;
 }
 h2 {
-  font-family: 'Battle';
+  font-family: 'PresStart';
+  text-transform: uppercase;
 }
 ul {
   padding: 0;

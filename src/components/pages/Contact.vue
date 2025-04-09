@@ -1,22 +1,26 @@
 <template>
   <div class="contact">
     <PageTitle :title="$t('page.contact')" />
-    <div class="contact__block flex justify-between">
+    <div class="contact__block flex justify-between mb-6">
       <div class="contact__descr">
-        <div class="contact__descr-title">{{ $t('contact.title') }}</div>
+        <div class="contact__descr-title text-base mb-4">{{ $t('contact.title') }}</div>
         <div class="contact__descr-text">
-          <p>{{ $t('contact.text') }}</p>
+          <p class="mb-4">{{ $t('contact.text') }}</p>
           <div class="contact__email flex items-center">
             <Icon class="contact__email-icon" name="email" />
             <a href="mailto:vitalizybailo@gmail.com">vitalizybailo@gmail.com</a>
           </div>
-          <p>{{ $t('contact.textSecond') }}</p>
+          <p class="mb-4">{{ $t('contact.textSecond') }}</p>
         </div>
         <Socials />
       </div>
       <div class="contact__form">
         <Form />
       </div>
+    </div>
+    <div class="contact__hr">
+      <div class="contact__hr-title text-base mb-4">{{ $t('contact.hrTitle') }}</div>
+      <FormHr/>
     </div>
   </div>
 </template>
@@ -26,6 +30,7 @@ import Form from '../layout/Form.vue'
 import PageTitle from '../layout/PageTitle.vue'
 import Socials from '../layout/Socials.vue'
 import Icon from '../common/Icon.vue'
+import FormHr from '../layout/FormHr.vue'
 </script>
 
 <style lang="scss">
@@ -35,15 +40,6 @@ import Icon from '../common/Icon.vue'
 }
 .contact__form-title {
   margin-bottom: 30px;
-}
-.contact__descr-title {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-.contact__descr-text {
-  p {
-    margin-bottom: 10px;
-  }
 }
 .contact {
   .socials__list {

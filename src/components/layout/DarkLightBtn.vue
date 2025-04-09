@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, computed, ref} from 'vue'
 import Icon from '../common/Icon.vue'
 
 const currentTheme = ref('light')
@@ -18,14 +18,14 @@ const switchTheme = () => {
 }
 
 onMounted(() => {
-  const savedTheme = localStorage.getItem('theme') || 'light'
+  let savedTheme = localStorage.getItem('theme') || 'light'
   document.body.setAttribute('data-theme', savedTheme)
+  currentTheme.value = savedTheme
 })
 
 const iconTheme = computed(() => {
   return currentTheme.value === 'light' ? 'moon' : 'sun'
 })
-const iconSwitcher = computed(() => {})
 </script>
 
 <style lang="scss">

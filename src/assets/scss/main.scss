@@ -8,11 +8,6 @@
 }
 
 @font-face {
-  font-family: 'Battle';
-  src: url('../fonts/undertale_battle_font.woff') format('woff');
-}
-
-@font-face {
   font-family: 'PresStart';
   src: url('../fonts/PressStart2P-Regular.woff') format('woff');
 }
@@ -26,6 +21,9 @@
   }
   .form__btn {
     color: $white;
+  }
+  .project__stack-item {
+    color: $black;
   }
 }
 

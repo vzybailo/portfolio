@@ -2,7 +2,7 @@
   <div class="about">
     <PageTitle :title="$t('page.about')" />
     <div class="about__top flex">
-      <img src="../../assets/images/about.jpg" alt="" class="about__img mr-6">
+      <img src="../../assets/images/about.png" alt="" class="about__img mr-6">
       <div class="about__descr">
         <div class="flex flex-col text-[36px] mb-12">
           <span>{{ $t('about.titleFirst') }}</span>
@@ -32,7 +32,7 @@ watch(() => locale.value, () => {
 const highlightedSecondTitle = computed(() => {
   return titleSecond.value.replace(
     new RegExp(`(${highlight.value})`, 'iu'),
-    `<span style="background-color: #C4E538; padding: 2px 4px; border-radius: 4px;">$1</span>`
+    `<span style="background-color: #C4E538; padding: 2px 4px;">$1</span>`
   )
 })
 </script>

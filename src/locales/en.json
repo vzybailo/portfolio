@@ -43,6 +43,9 @@
     "titleFirst": "I Break Things.",
     "titleSecond": "Then Fix Them With Code.",
     "highlight": "Fix",
-    "text": "Hi, I’m Vitaly. Originally from a small village, now I’m living in the USA and making the web a better place one website at a time. I’ve been a frontend developer since 2019, focusing on clean, functional code and user-friendly designs. I’m passionate about building websites that not only look great but also work perfectly. Let’s create something amazing together!"
+    "text": "Hi, I’m Vitali. Originally from a small village, now I’m living in the USA and making the web a better place one website at a time. I’ve been a frontend developer since 2019, focusing on clean, functional code and user-friendly designs. I’m passionate about building websites that not only look great but also work perfectly.",
+    "textFirst": "I work with modern technologies like React, Vue, TypeScript, and Sass. I pay attention to performance, accessibility, and responsive design — because a good website should feel right on every screen.",
+    "textSec": "For me, frontend is not just about code — it’s about solving problems and creating interfaces that make users' lives easier.",
+    "textThree": "I enjoy working in teams, sharing knowledge, and keeping the workflow smooth and positive — no drama, just clean commits."
   }
 }

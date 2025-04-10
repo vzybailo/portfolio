@@ -1,6 +1,6 @@
 <template>
   <router-link to="/">
-    <Icon class="logo" name="v" />
+    <Icon class="logo" name="logo" />
   </router-link>
 </template>
 
@@ -10,7 +10,8 @@ import Icon from '../common/Icon.vue'
 
 <style lang="scss">
 .logo {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg);
 }
 </style>

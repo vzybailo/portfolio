@@ -3,7 +3,7 @@
         <div class="quotes text-xl">"</div>
         <div class="form-hr__hello mb-4">Hello, {{ $t('firstName') }}</div> 
         <div class="form-hr__text mb-4">
-            My name is <input v-model="inputText" class="form-hr__input" type="text" placeholder="[HR Name]">, and I represent <input class="form-hr__input" type="text" placeholder="[Company]">. We are looking for a [Position] with experience in [Technologies/tools], and your background caught our attention. Your expertise in [Key achievements] aligns well with our needs.
+            My name is <input v-model="inputText" class="form-hr__input" type="text" placeholder="[HR Name]">, and I represent <input class="form-hr__input" type="text" placeholder="[Company]">. We are looking for a [Position] with experience in [Technologies/tools], and your background caught our attention.
         </div>
         <div class="form-hr__text mb-4">I’d be happy to discuss the opportunities and learn more about your goals. If you’re interested, let’s schedule an interview.</div>
         <div class="form-hr__text">Best regards,</div>
@@ -21,6 +21,9 @@ const inputText = ref('')
 </script>
 
 <style lang="scss">
+.form-hr {
+    color: $cian;
+}
 .form-hr__input {
     color: $lime;
     outline: none;

@@ -4,11 +4,14 @@
     <div class="about__top flex">
       <img src="../../assets/images/about.png" alt="" class="about__img mr-6">
       <div class="about__descr">
-        <div class="flex flex-col text-[36px] mb-12">
+        <div class="flex flex-col text-[36px] mb-14">
           <span>{{ $t('about.titleFirst') }}</span>
           <span v-html="highlightedSecondTitle"></span>
         </div>
-        <div class="text-l">{{ $t('about.text') }}</div>
+        <div class="text-l mb-6">{{ $t('about.text') }}</div>
+        <div class="text-l mb-6">{{ $t('about.textFirst') }}</div>
+        <div class="text-l mb-6">{{ $t('about.textSec') }}</div>
+        <div class="text-l">{{ $t('about.textThree') }}</div>
       </div>
     </div>
   </div>

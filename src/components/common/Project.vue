@@ -1,21 +1,24 @@
 <template>
   <div class="project flex items-center">
-    <img :src="imgUrl" alt="" class="project__img mr-6">
+    <img :src="imgUrl" alt="" class="project__img mr-6" />
     <div class="project__block">
       <div class="project__title mb-4 text-base">{{ title }}</div>
       <div class="project__description mb-2">{{ description }}</div>
       <ul class="project__stack flex mb-4">
-        <li class="project__stack-item" v-for="st in stack" :key="index">
-          #{{ st }}
-        </li>
+        <li class="project__stack-item" v-for="st in stack" :key="index">#{{ st }}</li>
       </ul>
       <div class="project__btns flex">
-        <a v-if="linkGithub" :href="linkGithub" target="blank" class="project__btn flex items-center">
-          <Icon class="project__btn-icon" name="github-btn"/>
+        <a
+          v-if="linkGithub"
+          :href="linkGithub"
+          target="blank"
+          class="project__btn flex items-center"
+        >
+          <Icon class="project__btn-icon" name="github-btn" />
           <span>GitHub</span>
         </a>
         <a v-if="linkLive" :href="linkLive" target="blank" class="project__btn flex items-center">
-          <Icon class="project__btn-icon" name="play"/>
+          <Icon class="project__btn-icon" name="play" />
           <span>Live Demo</span>
         </a>
       </div>
@@ -25,7 +28,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import Icon from './Icon.vue';
+import Icon from './Icon.vue'
 
 defineProps({
   title: {
@@ -38,32 +41,32 @@ defineProps({
   },
   imgUrl: {
     type: String,
-    required: true
+    required: true,
   },
   stack: {
     type: Array,
-    required: true
+    required: true,
   },
   linkGithub: {
     type: String,
-    required: true
+    required: true,
   },
   linkLive: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 })
 </script>
 
 <style lang="scss">
 .project__img {
-    width: 250px;
-    filter: grayscale(1);
+  width: 250px;
+  filter: grayscale(1);
 }
 .project__stack-item {
-    padding: 0 5px;
-    background-color: #C4E538;
-    margin-right: 10px; 
+  padding: 0 5px;
+  background-color: #c4e538;
+  margin-right: 10px;
 }
 .project__btn {
   @include btn;

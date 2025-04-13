@@ -3,7 +3,13 @@
     <PageTitle :title="$t('page.projects')" />
     <ul class="project__list">
       <li class="project__item" v-for="project in projects" :key="project.title">
-        <Project :imgUrl="project.img" :title="project.title" :description="project.description" :stack="project.stack" :linkGithub="project.linkGithub" />
+        <Project
+          :imgUrl="project.img"
+          :title="project.title"
+          :description="project.description"
+          :stack="project.stack"
+          :linkGithub="project.linkGithub"
+        />
       </li>
     </ul>
   </div>
@@ -11,7 +17,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import PageTitle from '../layout/PageTitle.vue'
+import PageTitle from '../common/PageTitle.vue'
 import Project from '../common/Project.vue'
 import githubFinderImg from '@/assets/images/github-finder.gif'
 import { useI18n } from 'vue-i18n'
@@ -25,13 +31,13 @@ const projects = computed(() => [
     img: githubFinderImg,
     stack: ['Vue', 'Axios', 'Github API', 'SCSS'],
     linkGithub: 'https://github.com/vzybailo/github-finder',
-    linklive: ''
+    linklive: '',
   },
   {
     title: 'Build',
     description: 'lorem22',
-    img: 'src/assets/images/github-finder.png'
-  }
+    img: 'src/assets/images/github-finder.png',
+  },
 ])
 </script>
 
@@ -41,15 +47,15 @@ const projects = computed(() => [
   border: 1px solid #d5d5d5;
   margin-bottom: 25px;
   box-shadow: 4px 4px 0 2px #e9e9e9;
-  transition: .4s;
+  transition: 0.4s;
 
   &:hover {
     box-shadow: none;
-  transform: translateY(2px);
+    transform: translateY(2px);
   }
 
   &:hover .project__img {
-    transition: .4s;
+    transition: 0.4s;
     filter: grayscale(0);
   }
 }

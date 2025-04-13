@@ -20,14 +20,14 @@
     </div>
     <div class="contact__hr">
       <div class="contact__hr-title text-base mb-4">{{ $t('contact.hrTitle') }}</div>
-      <FormHr/>
+      <FormHr />
     </div>
   </div>
 </template>
 
 <script setup>
 import Form from '../layout/Form.vue'
-import PageTitle from '../layout/PageTitle.vue'
+import PageTitle from '../common/PageTitle.vue'
 import Socials from '../layout/Socials.vue'
 import Icon from '../common/Icon.vue'
 import FormHr from '../layout/FormHr.vue'

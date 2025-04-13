@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref} from 'vue'
+import { onMounted, computed, ref } from 'vue'
 import Icon from '../common/Icon.vue'
 
 const currentTheme = ref('light')

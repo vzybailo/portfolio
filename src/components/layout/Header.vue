@@ -1,5 +1,5 @@
 <template>
-  <header class="header flex justify-between items-center py-5">
+  <header class="header flex justify-between items-center py-5 mb-6">
     <Logo />
     <NavMenu />
     <div class="switchers flex justify-between items-center">

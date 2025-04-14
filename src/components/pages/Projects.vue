@@ -35,7 +35,6 @@ const projects = ref([
     img: githubFinderImg,
     stack: ['Vue', 'Axios', 'Github API', 'SCSS'],
     linkGithub: 'https://github.com/vzybailo/github-finder',
-    linkLive: '',
     category: "vue"
   },
   {
@@ -49,7 +48,6 @@ const projects = ref([
     description: t('projects.skVerh'),
     img: skVerhImg,
     stack: ['HTML', 'SCSS', 'JavaScript', 'PHP', 'WordPress', 'ACF', 'Custom Theme'],
-    linkGithub: '',
     linkLive: 'https://sk-verh.ru/',
     category: "wordpress"
   },

@@ -2,7 +2,7 @@
   <div class="about">
     <PageTitle :title="$t('page.about')" />
     <div class="about__top flex mb-12">
-      <img src="../../assets/images/about.png" alt="" class="about__img mr-6">
+      <img src="../../assets/images/about.png" alt="" class="about__img mr-6" loading="lazy">
       <div class="about__descr pt-10">
         <div class="flex flex-col text-[36px] mb-14">
           <span>{{ $t('about.titleFirst') }}</span>

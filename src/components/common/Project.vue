@@ -5,7 +5,7 @@
       <div class="project__title mb-4 text-base">{{ title }}</div>
       <div class="project__description mb-2">{{ description }}</div>
       <ul class="project__stack flex mb-4">
-        <li class="project__stack-item" v-for="st in stack" :key="index">#{{ st }}</li>
+        <li class="project__stack-item" v-for="(st, index) in stack" :key="index">#{{ st }}</li>
       </ul>
       <div class="project__btns flex">
         <a
@@ -45,15 +45,15 @@ defineProps({
   },
   stack: {
     type: Array,
-    required: true,
+    defailt: [],
   },
   linkGithub: {
     type: String,
-    required: true,
+    default: '',
   },
   linkLive: {
     type: String,
-    required: true,
+    default: '',
   },
 })
 </script>

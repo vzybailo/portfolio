@@ -1,34 +1,43 @@
 <template>
   <ul class="filter__list flex mb-4">
-    <li v-for="(filter, index) in filters" :key="index" class="filter__item cursor-pointer mr-4 px-2 border border-[#d5d5d5]">
-      <span @click="applyFilter(filter.title)" class="filter__link">{{ filter.title }}</span>
-      <span v-if="activeFilter === filter.title" @click.stop.prevent="clearFilter" class="ml-2 text-[#ff5500]">x</span>
+    <li
+      v-for="(filter, index) in filters"
+      :key="index"
+      :class="{ active: activeFilter === filter.title }"
+      class="filter__item cursor-pointer mr-4 px-2 border"
+    >
+      <span @click="selectFilter(filter.title)">{{ filter.title }}</span>
+      <span
+        v-if="activeFilter === filter.title"
+        @click.stop.prevent="clearFilter"
+        class="ml-2 text-[#ff5500]"
+      >
+        x
+      </span>
     </li>
   </ul>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+const props = defineProps({
+  filters: Array,
+  activeFilter: String
+})
 
-let activeFilter = ref(null)
+const emit = defineEmits(['update-filter'])
 
-const filters = [
-  { title: "vue" },
-  { title: "react" },
-  { title: "wordpress" }
-]
-
-const applyFilter = (title) => {
-  activeFilter.value = title
-  console.log("Applied:", title)
+const selectFilter = (filter) => {
+  emit('update-filter', filter)
 }
 
 const clearFilter = () => {
-  activeFilter.value = null
-  console.log("Filter cleared")
+  emit('update-filter', null)
 }
 </script>
 
-<style lang="scss">
 
+<style lang="scss">
+.active {
+  border-color: $orange;
+}
 </style>

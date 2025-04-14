@@ -37,7 +37,8 @@
     "hrTitle": "If you're an HR professional looking to offer me an exciting opportunity, feel free to drop me a message, or simply download my CV for more details."
   },
   "projects": {
-    "githubFinder": "An application that allows you to find a user by their username and display all their repositories. Uses the GitHub API to fetch data."
+    "githubFinder": "An application that allows you to find a user by their username and display all their repositories. Uses the GitHub API to fetch data.",
+    "skVerh": "Corporate website for a construction company. Developed from scratch: implemented responsive layout, built a custom WordPress theme, integrated admin panel for easy content management."
   },
   "about": {
     "titleFirst": "I Break Things.",

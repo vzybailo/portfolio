@@ -1,6 +1,7 @@
 <template>
   <div class="projects">
     <PageTitle :title="$t('page.projects')" />
+    <ProjectFilter/>
     <ul class="project__list">
       <li class="project__item" v-for="project in projects" :key="project.title">
         <Project
@@ -21,6 +22,7 @@ import PageTitle from '../common/PageTitle.vue'
 import Project from '../common/Project.vue'
 import githubFinderImg from '@/assets/images/github-finder.gif'
 import { useI18n } from 'vue-i18n'
+import ProjectFilter from '../layout/ProjectFilter.vue'
 
 const { t } = useI18n()
 

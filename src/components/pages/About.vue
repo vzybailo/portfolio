@@ -53,8 +53,8 @@ import { ref, watch, computed } from 'vue'
 import lake from '@/assets/images/lake.jpg'
 import beach from '@/assets/images/beach.jpg'
 import sunset from '@/assets/images/sunset.jpg'
-import field from '@/assets/images/field.jpg'
 import horse from '@/assets/images/horse.jpg'
+import field from '@/assets/images/field.jpg'
 import tree from '@/assets/images/tree.jpg'
 
 const photos = [
@@ -62,8 +62,8 @@ const photos = [
   { src: beach, alt: "Beach" },
   { src: sunset, alt: "Sunset" },
   { src: tree, alt: "Tree silhouette" },
-  { src: field, alt: "field lights" },
-  { src: horse, alt: "Horse" }
+  { src: horse, alt: "Horse" },
+  { src: field, alt: "field lights" }
 ]
 
 const { t, locale } = useI18n()

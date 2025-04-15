@@ -2,7 +2,7 @@
   <div class="wrapper">
     <WelcomeHeader :isHomePage v-if="isHomePage" />
     <Header v-else />
-    <main class="content">
+    <main class="flex-1">
       <router-view />
     </main>
     <Footer v-if="!isHomePage" />
@@ -22,7 +22,4 @@ const isHomePage = computed(() => route.path === '/')
 </script>
 
 <style lang="scss">
-.content {
-  flex: 1;
-}
 </style>

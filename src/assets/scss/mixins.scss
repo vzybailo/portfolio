@@ -1,11 +1,11 @@
 @mixin btn {
   color: $black;
-  border: 2px solid $orange;
+  border: 1px solid $blueBtn;
   transition: 0.3s;
   padding: 5px 10px;
 
   &:hover {
-    background: $orange;
+    background: $blueBtn;
     color: $white;
     transition: 0.3s;
   }

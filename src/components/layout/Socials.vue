@@ -27,7 +27,7 @@ const socials = [
   transition: 0.3s;
 
   &:hover {
-    fill: #0057b8;
+    fill: $blueBtn;
     transition: 0.3s;
   }
 }

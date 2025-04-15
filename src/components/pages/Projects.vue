@@ -28,7 +28,7 @@ import ProjectFilter from '../layout/ProjectFilter.vue'
 
 const { t } = useI18n()
 
-const projects = ref([
+const projects = computed(() => [
   {
     title: 'Github finder',
     description: t('projects.githubFinder'),
@@ -77,7 +77,7 @@ const filteredProjects = computed(() => {
   padding: 20px;
   border: 1px solid #d5d5d5;
   margin-bottom: 25px;
-  box-shadow: 4px 4px 0 2px #e9e9e9;
+  box-shadow: $lightShadow;
   transition: 0.4s;
 
   &:hover {

@@ -70,7 +70,6 @@ defineProps({
 }
 .project__btn {
   @include btn;
-
   margin-right: 15px;
 
   span {

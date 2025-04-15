@@ -1,5 +1,5 @@
 <template>
-  <a href="#" class="switcher__lang" @click="switchLanguage">
+  <a href="#" class="uppercase mr-1" @click="switchLanguage">
     {{ newLang }}
   </a>
 </template>
@@ -22,11 +22,3 @@ const newLang = computed(() => {
   return currentLang.value === 'en' ? 'ru' : 'en'
 })
 </script>
-
-<style lang="scss">
-.switcher__lang {
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-right: 10px;
-}
-</style>

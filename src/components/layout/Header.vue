@@ -1,8 +1,8 @@
 <template>
-  <header class="header flex justify-between items-center py-5 mb-6">
+  <header class="flex justify-between items-center py-5 mb-6">
     <Logo />
     <NavMenu />
-    <div class="switchers flex justify-between items-center">
+    <div class="flex justify-between items-center">
       <LangSwitcher />
       <DarkLightBtn />
     </div>

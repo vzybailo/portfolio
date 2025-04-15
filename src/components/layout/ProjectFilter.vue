@@ -4,13 +4,13 @@
       v-for="(filter, index) in filters"
       :key="index"
       :class="{ active: activeFilter === filter.title }"
-      class="filter__item cursor-pointer mr-4 px-2 border"
+      class="filter__item cursor-pointer mr-2 px-2"
     >
       <span @click="selectFilter(filter.title)">{{ filter.title }}</span>
       <span
         v-if="activeFilter === filter.title"
         @click.stop.prevent="clearFilter"
-        class="ml-2 text-[#ff5500]"
+        class="ml-2 text-[#ff073a]"
       >
         x
       </span>
@@ -37,7 +37,8 @@ const clearFilter = () => {
 
 
 <style lang="scss">
-.active {
-  border-color: $orange;
+.filter__item {
+  border: 1px solid $lightBorder;
+  box-shadow: $lightShadow;
 }
 </style>

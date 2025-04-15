@@ -13,36 +13,46 @@
 }
 
 [data-theme='dark'] {
-  background-color: $dark;
+  background-color: $darkBg;
   color: $white;
-
-  a {
-    color: $white;
-  }
+  a, 
   .form__btn {
     color: $white;
   }
   .project__stack-item {
     color: $black;
   }
-}
-
-[data-theme='light'] {
-  background-color: $white;
-  color: $dark;
-
-  a {
-    color: $gray;
+  .project__item,
+  .welcome__wrapper,
+  .filter__item,
+  .form__input {
+    box-shadow: $darkShadow;
+    border-color: $darkBorder;
+  }
+  .welcome__nav {
+    border-top-color: $darkBorder;
+  }
+  .welcome__nav .nav__item:nth-child(2) {
+    border-left-color: $darkBorder;
+    border-right-color: $darkBorder;
   }
 }
-
+[data-theme='light'] {
+  background-color: $white;
+  color: $darkBg;
+  a {
+    color: $grayBase;
+  }
+  .welcome__wrapper {
+    box-shadow: $lightShadow;
+    border-color: $lightBorder;
+  }
+}
 body {
   font-family: 'JetBrains';
   font-size: 14px;
-  color: $gray;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  color: $grayBase;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 h1,
 h2 {

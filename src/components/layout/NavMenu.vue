@@ -2,7 +2,7 @@
   <nav class="nav">
     <ul class="nav__list flex">
       <li class="nav__item" v-for="route in menuRoutes" :key="route.name">
-        <router-link class="nav__link" :to="route.path">{{
+        <router-link class="nav__link uppercase" :to="route.path">{{
           $t(route.name) || route.name
         }}</router-link>
       </li>
@@ -29,10 +29,6 @@ const menuRoutes = computed(() =>
 <style lang="scss">
 .nav__item {
   margin-right: 15px;
-
-  a {
-    text-transform: uppercase;
-  }
 
   &:last-child {
     margin-right: 0;

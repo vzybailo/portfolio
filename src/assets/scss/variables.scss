@@ -1,10 +1,22 @@
+// colors
 $white: #fff;
-$dark: #282c34;
-$gray: #333;
-$lightGray: #a9a9a9;
 $black: #000;
-$pink: #ff007f;
-$orange: #ff5500;
-$lightRed: #ff5555;
-$cian: #00aaaa;
-$lime: #c4e538;
+$darkBg: #282c34;
+$grayBase: #333;
+
+// buttons
+$blueBtn: #1e90ff;
+
+// warn and highlight
+$redWarn: #ff073a;
+$limeHighlight: #c4e538;
+
+// titles
+$pinkTitle: #ff007f;
+$cianSubTitle: #00aaaa;
+
+// shadows and borders
+$lightBorder: #c2bfb9;
+$darkBorder: #4b525e;
+$lightShadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+$darkShadow: 0 2px 6px rgba(0, 0, 0, 0.6);

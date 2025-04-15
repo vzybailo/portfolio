@@ -1,7 +1,7 @@
 <template>
   <section class="stack-tags">
     <ul class="flex flex-wrap mb-4">
-      <li v-for="(tag, index) in tags" :key="index" class="tag py-1 mr-6">
+      <li v-for="(tag, index) in tags" :key="index" class="tag transition duration-300 py-1 mr-6">
         {{ tag }}
       </li>
     </ul>
@@ -15,6 +15,7 @@ const tags = [
   '[⚛️] React',
   '[🖼️] Vue',
   '[💨] Next.js',
+  '[💊] Nuxt.js',
   '[🌐] WordPress',
 
   // Styling & Design
@@ -48,12 +49,7 @@ const tags = [
 </script>
 
 <style lang="scss">
-.tag {
-  transition: 0.3s;
-
-  &:hover {
-    color: $orange;
-    transition: 0.3s;
+.tag:hover {
+    color: $blueBtn;
   }
-}
 </style>

@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="welcome__nav">
-          <NavMenu />
+          <NavMenu class="flex justify-center" />
         </div>
       </div>
     </div>
@@ -51,8 +51,8 @@ defineProps({
   height: 100%;
 }
 .welcome__wrapper {
-  border: 1px solid #d5d5d5;
-  box-shadow: 4px 4px 0 2px #e9e9e9;
+  border: 1px solid $lightBorder;
+  box-shadow: $lightShadow;
 }
 .welcome__about {
   padding: 20px;
@@ -62,7 +62,7 @@ defineProps({
   font-weight: 700;
 }
 .welcome__nav {
-  border-top: 1px #d5d5d5 solid;
+  border-top: 1px $lightBorder solid;
 }
 .welcome__img {
   width: 150px;
@@ -79,15 +79,10 @@ defineProps({
     margin-right: 0;
 
     &:nth-child(2) {
-      border-left: 1px #d5d5d5 solid;
-      border-right: 1px #d5d5d5 solid;
+      border-left: 1px $lightBorder solid;
+      border-right: 1px $lightBorder solid;
     }
   }
-}
-.welcome__nav .nav {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
 }
 .welcome__nav .nav__list {
   display: grid;
@@ -100,8 +95,8 @@ defineProps({
   transition: 0.3s;
 
   &:hover {
-    background-color: #00aaaa;
-    color: #fff;
+    background-color: $blueBtn;
+    color: $white;
     transition: 0.3s;
   }
 }

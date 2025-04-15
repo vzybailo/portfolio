@@ -141,10 +141,11 @@ const isShowStatus = computed(
   border: 0;
   padding: 5px;
   margin-top: 5px;
-  border: 1px solid $lightGray;
+  border: 1px solid $lightBorder;
+  box-shadow: $lightShadow;
 }
 .form__error {
-  color: $lightRed;
+  color: $redWarn;
   font-size: 12px;
 }
 .form__btn {

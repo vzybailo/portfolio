@@ -35,18 +35,18 @@ const inputText = ref('')
 
 <style lang="scss">
 .form-hr {
-  color: $cian;
+  color: $cianSubTitle;
 }
 .form-hr__input {
-  color: $lime;
+  color: $limeHighlight;
   outline: none;
 
   &::placeholder {
-    color: $lime;
+    color: $limeHighlight;
   }
 }
 .quotes {
   font-family: 'PresStart';
-  color: $pink;
+  color: $pinkTitle;
 }
 </style>

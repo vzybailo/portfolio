@@ -2,7 +2,7 @@
   <div class="about">
     <PageTitle :title="$t('page.about')" />
     <div class="about__top flex mb-12">
-      <img src="../../assets/images/about.png" alt="" class="about__img mr-6" loading="lazy">
+      <img src="../../assets/images/about.png" alt="" class="w-1/2 mr-6 sm:w-sm" loading="lazy">
       <div class="about__descr pt-10">
         <div class="flex flex-col text-[36px] mb-14">
           <span>{{ $t('about.titleFirst') }}</span>
@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div class="mb-12">
-      <div class="mb-4 tracking-wider">Through My Lens</div>
+      <div class="mb-4 tracking-wider">{{ $t('about.photoTitle') }}</div>
       <div class="columns-1 sm:columns-2 md:columns-3 gap-4 max-w-6xl mx-auto">
         <div v-for="(photo, index) in photos" :key="index" class="break-inside-avoid mb-4">
           <img
@@ -85,11 +85,8 @@ const highlightedSecondTitle = computed(() => {
 </script>
 
 <style lang="scss">
-.about__img {
-  width: 50%;
-}
 .about__title {
-  background-color: $cian;
+  background-color: $cianSubTitle;
   width: max-content;
   padding: 2px 4px;
   color: $white;

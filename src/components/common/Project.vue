@@ -65,7 +65,7 @@ defineProps({
 }
 .project__stack-item {
   padding: 0 5px;
-  background-color: #c4e538;
+  background-color: $limeHighlight;
   margin-right: 10px;
 }
 .project__btn {

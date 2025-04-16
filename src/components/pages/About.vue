@@ -79,17 +79,16 @@ watch(() => locale.value, () => {
 const highlightedSecondTitle = computed(() => {
   return titleSecond.value.replace(
     new RegExp(`(${highlight.value})`, 'iu'),
-    `<span style="background-color: #C4E538; padding: 2px 4px;">$1</span>`
+    `<span style="background-color: #39D28A; padding: 2px 4px;">$1</span>`
   )
 })
 </script>
 
 <style lang="scss">
 .about__title {
-  background-color: $cianSubTitle;
   width: max-content;
   padding: 2px 4px;
-  color: $white;
+  color: $pinkTitle;
 }
 .break-inside-avoid {
   break-inside: avoid;

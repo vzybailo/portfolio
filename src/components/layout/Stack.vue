@@ -1,55 +1,74 @@
 <template>
-  <section class="stack-tags">
-    <ul class="flex flex-wrap mb-4">
-      <li v-for="(tag, index) in tags" :key="index" class="tag transition duration-300 py-1 mr-6">
-        {{ tag }}
-      </li>
-    </ul>
-    <div>{{ $t('about.stackWP') }}</div>
-  </section>
+  <div class="stack-tags grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div
+      v-for="(group, index) in techStack"
+      :key="index"
+      class="text-sm"
+    >
+      <span class="text-green-400">// {{ group.category }}</span>
+      <ul class="list-none mt-2">
+        <li v-for="(tech, techIndex) in group.items" :key="techIndex">
+          [{{ tech }}]
+        </li>
+      </ul>
+    </div>
+    <div class="md:col-span-3 mt-2">{{ $t('about.stackWP') }}</div>
+  </div>
 </template>
 
 <script setup>
-const tags = [
-  // UI Frameworks & Platforms
-  '[⚛️] React',
-  '[🖼️] Vue',
-  '[💨] Next.js',
-  '[💊] Nuxt.js',
-  '[🌐] WordPress',
-
-  // Styling & Design
-  '[🌬️] Tailwind CSS',
-  '[💅] Sass',
-  '[🎨] Figma',
-
-  // Languages & Environment
-  '[📐] TypeScript',
-  '[🪄] Node.js',
-
-  // Tooling & Build
-  '[📦] Vite',
-  '[🛠️] Webpack',
-  '[👨‍💻] Git',
-  '[🔎] ESLint',
-  '[🎯] Prettier',
-
-  // State & API Handling
-  '[🔁] React Query',
-
-  // Testing
-  '[🧪] Jest',
-  '[🧪] Testing Library',
-
-  // DevOps & Monitoring
-  '[☁️] Amazon AWS',
-  '[🧰] Docker',
-  '[🚦] GitHub Actions',
+const techStack = [
+  {
+    category: '🧩 Frameworks & Platforms',
+    items: [
+      '⚛️ React',
+      '🖼️ Vue',
+      '🔂 Next.js',
+      '🌱 Nuxt.js',
+      '🌐 WordPress'
+    ]
+  },
+  {
+    category: '🎨 Styling & Design',
+    items: [
+      '🌬️ Tailwind CSS',
+      '💅 Sass',
+      '🎨 Figma'
+    ]
+  },
+  {
+    category: '🧪 Testing & State',
+    items: [
+      '🔁 React Query',
+      '🧪 Jest',
+      '🧫 Testing Library'
+    ]
+  },
+  {
+    category: '⚙️ Tooling & Build',
+    items: [
+      '📐 TypeScript',
+      '🌀 Vite',
+      '📦 Webpack',
+      '👨‍💻 Git',
+      '🔎 ESLint',
+      '🎯 Prettier'
+    ]
+  },
+  {
+    category: '☁️ DevOps',
+    items: [
+      '🪄 Node.js',
+      '☁️ Amazon AWS',
+      '🐳 Docker',
+      '⚙️ GitHub Actions'
+    ]
+  }
 ]
 </script>
 
 <style lang="scss">
-.tag:hover {
-    color: $blueBtn;
-  }
+.text-green-400 {
+  color: $cianSubTitle;
+}
 </style>

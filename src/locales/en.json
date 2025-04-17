@@ -34,7 +34,8 @@
     "text": "If you need help building or improving a web project, have a collaboration idea, or just have questions – I’m always available!",
     "textSecond": "You can reach me via email or social media, or use the form on the right to send me a message directly. I try to respond as quickly as possible.",
     "textWait": "Looking forward to hearing from you! 🚀",
-    "hrTitle": "If you're an HR professional looking to offer me an exciting opportunity, feel free to drop me a message, or simply download my CV for more details."
+    "hrTitleFirst": "HR professional? Message me or ",
+    "hrTitleSec": "download my CV."
   },
   "projects": {
     "githubFinder": "An application that allows you to find a user by their username and display all their repositories. Uses the GitHub API to fetch data.",

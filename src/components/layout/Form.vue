@@ -1,6 +1,6 @@
 <template>
   <form class="form flex flex-col mb-4" v-on:submit.prevent="sendForm">
-    <div class="full__name flex justify-between">
+    <div class="full__name flex justify-between max-sm:flex-col">
       <label for="firstName" class="flex flex-col mb-4 form__label">
         {{ $t('form.firstName') }}
         <input
@@ -35,6 +35,7 @@
       <textarea
         class="form__input"
         id="message"
+        rows=4
         v-model="formData.message"
         @blur="v$.message.$touch()"
       >
@@ -143,6 +144,7 @@ const isShowStatus = computed(
   margin-top: 5px;
   border: 1px solid $lightBorder;
   box-shadow: $lightShadow;
+  resize: none;
 }
 .form__error {
   color: $redWarn;

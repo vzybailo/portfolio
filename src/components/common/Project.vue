@@ -1,7 +1,7 @@
 <template>
-  <div class="project flex items-center">
+  <div class="project flex items-center max-sm:flex-col">
     <img :src="imgUrl" alt="" class="project__img mr-6" />
-    <div class="project__block">
+    <div class="project__block w-full">
       <div class="project__title mb-4 text-base">{{ title }}</div>
       <div class="project__description mb-2">{{ description }}</div>
       <ul class="project__stack flex mb-4">

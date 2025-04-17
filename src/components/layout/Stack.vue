@@ -3,7 +3,6 @@
     <div
       v-for="(group, index) in techStack"
       :key="index"
-      class="text-sm"
     >
       <span class="text-green-400">// {{ group.category }}</span>
       <ul class="list-none mt-2">
@@ -58,7 +57,7 @@ const techStack = [
   {
     category: '☁️ DevOps',
     items: [
-      '🪄 Node.js',
+      '👑 Node.js',
       '☁️ Amazon AWS',
       '🐳 Docker',
       '⚙️ GitHub Actions'
@@ -69,6 +68,6 @@ const techStack = [
 
 <style lang="scss">
 .text-green-400 {
-  color: $cianSubTitle;
+  color: $limeHighlight;
 }
 </style>

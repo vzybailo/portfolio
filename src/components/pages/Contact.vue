@@ -15,11 +15,11 @@
         <Socials class="justify-start"/>
       </div>
       <div>
-        <Form />
+        <Form class="mt-10 max-sm:mt-4" />
       </div>
     </div>
     <div class="contact__hr">
-      <div class="contact__hr-title text-base mb-4">{{ $t('contact.hrTitle') }}</div>
+      <div class="contact__hr-title text-base mb-4">{{ $t('contact.hrTitleFirst') }} <a href="" class="contact__hr-cv">{{ $t('contact.hrTitleSec') }}</a></div>
       <FormHr />
     </div>
   </div>
@@ -32,3 +32,10 @@ import Socials from '../layout/Socials.vue'
 import Icon from '../common/Icon.vue'
 import FormHr from '../layout/FormHr.vue'
 </script>
+
+<style lang="scss">
+.contact__hr-cv {
+  background-color: $limeHighlight; 
+  padding: 2px 4px;
+}
+</style>

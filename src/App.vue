@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper max-sm:px-4">
     <WelcomeHeader :isHomePage v-if="isHomePage" />
     <Header v-else />
     <main class="flex-1">

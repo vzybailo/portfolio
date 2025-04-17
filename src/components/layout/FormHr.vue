@@ -34,9 +34,6 @@ const inputText = ref('')
 </script>
 
 <style lang="scss">
-.form-hr {
-  color: $cianSubTitle;
-}
 .form-hr__input {
   color: $limeHighlight;
   outline: none;

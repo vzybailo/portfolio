@@ -1,41 +1,41 @@
 <template>
-  <header >
-    <div v-if="!isMobile" class="flex justify-between items-center py-5 mb-6">
-      <Logo />
-      <NavMenu/>
-      <div class="flex justify-between items-center">
-        <LangSwitcher />
-        <DarkLightBtn />
-      </div>
-    </div>
-    <div v-else>
-      <div class="flex justify-between items-center py-5 mb-6">
-        <Logo/>
-        <div @click="openMenu">
+  <header>
+    <div class="py-5 mb-6" :class="openClass">
+      <div v-if="isMobile" class="flex justify-between items-center">
+        <Logo />
+        <div @click="toggleOpen" class="cursor-pointer">
           click
         </div>
       </div>
-      <div v-if="isOpen" class="h-screen w-screen flex flex-col justify-center items-center">
-        <NavMenu class="mobile-menu mb-10" v-model:isOpen="isOpen"/>
-        <div class="flex items-center justify-center w-full">
+
+      <div v-else class="flex justify-between items-center">
+        <Logo />
+        <NavMenu v-model="isOpen" />
+        <div class="flex items-center">
           <LangSwitcher />
           <DarkLightBtn />
         </div>
       </div>
+
+      <Burger v-if="isMobile && isOpenBurger" class="mt-4 w-screen h-screen justify-center" />
     </div>
   </header>
 </template>
+
 
 <script setup>
 import NavMenu from './NavMenu.vue'
 import Logo from './Logo.vue'
 import DarkLightBtn from './DarkLightBtn.vue'
 import LangSwitcher from './LangSwitcher.vue'
+import Burger from './Burger.vue'
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 const isMobile = ref(false)
-const isOpen = ref(false)
+const isOpenBurger = ref(false)
+
+const openClass = computed(() => ({'open-burger': isOpenBurger.value}))
 
 onMounted(() => {
   const checkMobile = () => {
@@ -46,8 +46,9 @@ onMounted(() => {
   window.addEventListener('resize', checkMobile)
 })
 
-const openMenu = (() => isOpen.value = !isOpen.value)
+const toggleOpen = () => isOpenBurger.value = !isOpenBurger.value
 </script>
+
 
 <style lang="scss">
 .mobile-menu .nav__list {
@@ -61,6 +62,23 @@ const openMenu = (() => isOpen.value = !isOpen.value)
     }
   }
 
+  .nav__link {
+    font-size: 26px;
+  }
+}
+.open-burger {
+  display: flex;
+  flex-direction: column;
+
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .nav__item {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
   .nav__link {
     font-size: 26px;
   }

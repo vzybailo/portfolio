@@ -1,16 +1,16 @@
 <template>
   <div class="wrapper max-sm:px-4">
     <WelcomeHeader :isHomePage v-if="isHomePage" />
-    <Header v-else />
+    <Header v-else/>
     <main class="flex-1">
       <router-view />
     </main>
-    <Footer v-if="!isHomePage" />
+    <Footer v-if="!isHomePage"/>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 import Header from './components/layout/Header.vue'

@@ -2,7 +2,12 @@
   <div class="about">
     <PageTitle :title="$t('page.about')" />
     <div class="about__top flex mb-12 max-sm:flex-col">
-      <img src="../../assets/images/about.png" alt="" class="w-1/2 mr-6 max-sm:w-full" loading="lazy">
+      <img
+        src="../../assets/images/about.png"
+        alt=""
+        class="w-1/2 mr-6 max-sm:w-full"
+        loading="lazy"
+      />
       <div class="about__descr pt-10">
         <div class="flex flex-col text-[36px] mb-14">
           <span>{{ $t('about.titleFirst') }}</span>
@@ -16,7 +21,7 @@
     </div>
     <div class="about__stack mb-12">
       <h2 class="about__title mb-6 text-l">{{ $t('about.stack') }}</h2>
-      <Stack/>
+      <Stack />
     </div>
     <div class="about__outside mb-10">
       <h2 class="about__title mb-6 text-l">{{ $t('about.outsideTitle') }}</h2>
@@ -58,12 +63,12 @@ import field from '@/assets/images/field.jpg'
 import tree from '@/assets/images/tree.jpg'
 
 const photos = [
-  { src: lake, alt: "Lake view" },
-  { src: beach, alt: "Beach" },
-  { src: sunset, alt: "Sunset" },
-  { src: tree, alt: "Tree silhouette" },
-  { src: horse, alt: "Horse" },
-  { src: field, alt: "field lights" }
+  { src: lake, alt: 'Lake view' },
+  { src: beach, alt: 'Beach' },
+  { src: sunset, alt: 'Sunset' },
+  { src: tree, alt: 'Tree silhouette' },
+  { src: horse, alt: 'Horse' },
+  { src: field, alt: 'field lights' },
 ]
 
 const { t, locale } = useI18n()
@@ -71,15 +76,18 @@ const { t, locale } = useI18n()
 const titleSecond = ref(t('about.titleSecond'))
 const highlight = ref(t('about.highlight'))
 
-watch(() => locale.value, () => {
-  titleSecond.value = t('about.titleSecond')
-  highlight.value = t('about.highlight')
-})
+watch(
+  () => locale.value,
+  () => {
+    titleSecond.value = t('about.titleSecond')
+    highlight.value = t('about.highlight')
+  },
+)
 
 const highlightedSecondTitle = computed(() => {
   return titleSecond.value.replace(
     new RegExp(`(${highlight.value})`, 'iu'),
-    `<span style="background-color: #39D28A; padding: 2px 4px;">$1</span>`
+    `<span style="background-color: #39D28A; padding: 2px 4px;">$1</span>`,
   )
 })
 </script>
@@ -103,5 +111,4 @@ const highlightedSecondTitle = computed(() => {
     transition: 0.3s;
   }
 }
-
 </style>

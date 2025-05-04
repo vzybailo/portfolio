@@ -1,11 +1,17 @@
 <template>
   <div class="flex items-center max-sm:flex-col">
-    <img :src="imgUrl" alt="" class="project__img w-[250px] mr-6 max-sm:w-auto max-sm:mr-0 max-sm:mb-4" />
+    <img
+      :src="imgUrl"
+      alt=""
+      class="project__img w-[250px] mr-6 max-sm:w-auto max-sm:mr-0 max-sm:mb-4"
+    />
     <div>
       <div class="mb-4 text-base">{{ title }}</div>
       <div class="mb-2">{{ description }}</div>
       <ul class="flex mb-4 flex-wrap">
-        <li class="project__stack-item mr-2 max-sm:mb-2" v-for="(st, index) in stack" :key="index">#{{ st }}</li>
+        <li class="project__stack-item mr-2 max-sm:mb-2" v-for="(st, index) in stack" :key="index">
+          #{{ st }}
+        </li>
       </ul>
       <div class="project__btns flex">
         <a

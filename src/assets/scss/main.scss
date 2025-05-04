@@ -15,7 +15,7 @@
 [data-theme='dark'] {
   background-color: $darkBg;
   color: $white;
-  a, 
+  a,
   .form__btn {
     color: $white;
   }
@@ -52,7 +52,9 @@ body {
   font-family: 'JetBrains';
   font-size: 14px;
   color: $grayBase;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 h1,
 h2 {

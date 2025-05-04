@@ -21,7 +21,7 @@
 <script setup>
 const props = defineProps({
   filters: Array,
-  activeFilter: String
+  activeFilter: String,
 })
 
 const emit = defineEmits(['update-filter'])
@@ -34,7 +34,6 @@ const clearFilter = () => {
   emit('update-filter', null)
 }
 </script>
-
 
 <style lang="scss">
 .filter__item {

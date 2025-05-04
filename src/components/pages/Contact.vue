@@ -12,14 +12,17 @@
           </div>
           <p class="mb-4">{{ $t('contact.textSecond') }}</p>
         </div>
-        <Socials class="justify-start"/>
+        <Socials class="justify-start" />
       </div>
       <div>
         <Form class="mt-10 max-sm:mt-4" />
       </div>
     </div>
     <div class="contact__hr">
-      <div class="contact__hr-title text-base mb-4">{{ $t('contact.hrTitleFirst') }} <a href="" class="contact__hr-cv">{{ $t('contact.hrTitleSec') }}</a></div>
+      <div class="contact__hr-title text-base mb-4">
+        {{ $t('contact.hrTitleFirst') }}
+        <a href="" class="contact__hr-cv">{{ $t('contact.hrTitleSec') }}</a>
+      </div>
       <FormHr />
     </div>
   </div>
@@ -35,7 +38,7 @@ import FormHr from '../layout/FormHr.vue'
 
 <style lang="scss">
 .contact__hr-cv {
-  background-color: $limeHighlight; 
+  background-color: $limeHighlight;
   padding: 2px 4px;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="wrapper max-sm:px-4">
     <WelcomeHeader :isHomePage v-if="isHomePage" />
-    <Header v-else/>
+    <Header v-else />
     <main class="flex-1">
       <router-view />
     </main>
-    <Footer v-if="!isHomePage"/>
+    <Footer v-if="!isHomePage" />
   </div>
 </template>
 
@@ -21,5 +21,4 @@ const route = useRoute()
 const isHomePage = computed(() => route.path === '/')
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

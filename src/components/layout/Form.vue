@@ -35,7 +35,7 @@
       <textarea
         class="form__input"
         id="message"
-        rows=4
+        rows="4"
         v-model="formData.message"
         @blur="v$.message.$touch()"
       >

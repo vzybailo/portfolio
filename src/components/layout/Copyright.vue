@@ -1,5 +1,8 @@
 <template>
-  <div class="copyright">© {{ currentYear }} {{ $t('name') }}. {{ $t('copyright') }}</div>
+  <div class="copyright flex max-sm:flex-col"> 
+    <span>©{{ currentYear }} {{ $t('name') }}.</span> 
+    <span>{{ $t('copyright') }}</span>
+  </div>
 </template>
 
 <script setup>

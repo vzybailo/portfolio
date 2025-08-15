@@ -9,11 +9,11 @@
       <div class="welcome__wrapper">
         <div class="welcome__me">
           <div class="welcome__about flex flex-col items-center align-center">
-            <img src="./../../assets/images/me.jpeg" alt="" class="welcome__img" />
+            <img src="@/assets/images/me.jpeg" alt="" class="welcome__img" />
             <div class="welcome__name">{{ $t('name') }}</div>
             <div class="welcome__position">Frontend Developer</div>
           </div>
-          <div class="welcome__socials">
+          <div class="mb-6">
             <Socials />
           </div>
         </div>
@@ -105,8 +105,5 @@ defineProps({
   height: 23px;
   margin-left: 8px;
   cursor: pointer;
-}
-.welcome__socials {
-  margin-bottom: 20px;
 }
 </style>

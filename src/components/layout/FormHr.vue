@@ -1,36 +1,72 @@
 <template>
-  <form action="" class="form-hr">
+  <form action="">
     <div class="quotes text-xl">"</div>
-    <div class="form-hr__hello mb-4">Hello, {{ $t('firstName') }}</div>
-    <div class="form-hr__text mb-4">
-      My name is
-      <input v-model="inputText" class="form-hr__input" type="text" placeholder="[HR Name]" />, and
-      I represent <input class="form-hr__input" type="text" placeholder="[Company]" />. We are
-      looking for a [Position] with experience in [Technologies/tools], and your background caught
-      our attention.
+    <div class="mb-4">{{ $t('contact.formHr.greeting') }}, {{ $t('firstName') }}</div>
+    <div class="mb-4">
+      <p>
+        {{ $t('contact.formHr.myName') }}
+        <input v-model="inputHrName" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.hrName')" />
+      </p>
+      <p>
+        {{ $t('contact.formHr.represent') }}
+        <input v-model="inputCompany" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.company')"  />
+      </p>
+      {{ $t('contact.formHr.look') }}
+      <select v-model="role" class="form-hr__input">
+        <option v-for="item in techMap" :key="item.position" :value="item.position">
+          {{ item.position }}
+        </option>
+      </select>
+      {{ $t('contact.formHr.experience') }} <span class="form-hr__input">{{ currentStack }}</span>
+      {{ $t('contact.formHr.bg') }}.
     </div>
-    <div class="form-hr__text mb-4">
-      I’d be happy to discuss the opportunities and learn more about your goals. If you’re
-      interested, let’s schedule an interview.
+    <div class="mb-4">
+      {{ $t('contact.formHr.happy') }}
     </div>
-    <div class="form-hr__text">Best regards,</div>
-    <div class="form-hr__text">
-      <input v-model="inputText" class="form-hr__input" type="text" placeholder="[HR Name]" />
+    <div>{{ $t('contact.formHr.regards') }}</div>
+    <div>
+      <input v-model="inputHrName" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.hrName')"  />
     </div>
-    <div class="form-hr__text">
-      Company <input class="form-hr__input" type="text" placeholder="[Company]" />
+    <div>
+      <input v-model="inputCompany" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.company')"  />
     </div>
-    <div class="form-hr__text">
-      Contact: <input class="form-hr__input" type="text" placeholder="[Email/phone]" />
+    <div>
+      <input class="form-hr__input" type="text" :placeholder="$t('contact.formHr.contact')" />
     </div>
     <div class="quotes text-xl text-right">"</div>
+    <button class="form__btn text-white transition cursor-pointer uppercase" type="submit">
+      {{ $t('form.send') }}
+    </button>
   </form>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
-const inputText = ref('')
+const inputHrName = ref('')
+const inputCompany = ref('')
+const role = ref('Frontend Developer')
+
+const currentStack = computed(() => {
+  const item = techMap.find((i) => i.position === role.value)
+  return item ? item.stack : ''
+})
+
+const techMap = [
+  {
+    position: 'Frontend Developer',
+    stack: 'JS, TS, HTML, CSS, React, Vue, Next.js, Tailwind, SCSS, Redux, GraphQL, REST, Jest',
+  },
+  {
+    position: 'FullStack Developer',
+    stack:
+      'React, Next.js, TS, Node.js, Express, NestJS, SQL, MongoDB, REST, GraphQL, Docker, AWS, CI/CD',
+  },
+  {
+    position: 'WordPress Developer',
+    stack: 'WordPress, PHP, MySQL, Custom Themes, Plugins, WooCommerce, JS, Tailwind, REST, WP-CLI',
+  },
+]
 </script>
 
 <style lang="scss">

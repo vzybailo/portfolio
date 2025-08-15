@@ -56,7 +56,7 @@ onMounted(() => {
 })
 
 watch(isOpenBurger, (newVal) => {
-  if(newVal) {
+  if (newVal) {
     document.body.classList.add('overflow-hidden')
   } else {
     document.body.classList.remove('overflow-hidden')

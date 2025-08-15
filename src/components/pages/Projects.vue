@@ -48,10 +48,10 @@ const projects = computed(() => [
     category: 'vue',
   },
   {
-    title: 'Build',
+    title: 'Lone Magnet',
     description: 'lorem22',
     img: 'src/assets/images/github-finder.png',
-    category: 'react',
+    category: 'react, wordpress',
   },
   {
     title: 'Varvara Golovko - interior designer',

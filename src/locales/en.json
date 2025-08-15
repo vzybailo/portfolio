@@ -35,7 +35,20 @@
     "textSecond": "You can reach me via email or social media, or use the form on the right to send me a message directly. I try to respond as quickly as possible.",
     "textWait": "Looking forward to hearing from you! 🚀",
     "hrTitleFirst": "HR professional? Message me or ",
-    "hrTitleSec": "download my CV."
+    "hrTitleSec": "download my CV.",
+    "formHr": {
+      "greeting": "Hello",
+      "myName": "My name",
+      "represent": "I represent",
+      "look": "We are looking for a",
+      "experience": "with experience in",
+      "bg": "and your background caught our attention",
+      "happy": "I’d be happy to discuss the opportunities and learn more about your goals. If you’re interested, let’s schedule an interview.",
+      "regards": "Best regards,",
+      "hrName": "[Your name]",
+      "company": "[Company]",
+      "contact": "[Email / phone]"
+    }
   },
   "projects": {
     "githubFinder": "An application that allows you to find a user by their username and display all their repositories. Uses the GitHub API to fetch data.",

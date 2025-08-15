@@ -18,7 +18,7 @@
         <Form class="mt-10 max-sm:mt-4" />
       </div>
     </div>
-    <div class="contact__hr">
+    <div class="mb-16">
       <div class="contact__hr-title text-base mb-4">
         {{ $t('contact.hrTitleFirst') }}
         <a href="" class="contact__hr-cv">{{ $t('contact.hrTitleSec') }}</a>

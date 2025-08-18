@@ -16,6 +16,9 @@ export default defineConfig({
       symbolId: 'icon-[name]',
     })
   ],
+  server: {
+    proxy: { '/api': 'http://localhost:3001' },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

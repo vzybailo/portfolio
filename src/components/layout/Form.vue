@@ -64,8 +64,10 @@ const { t } = useI18n()
 
 const formData = ref({
   firstName: '',
+  lastName: '',
   email: '',
   message: '',
+  honeypot: ''
 })
 
 const rules = {
@@ -88,39 +90,45 @@ const getErrorMessage = (field) => {
   return ''
 }
 
-const statusMessage = ref({
-  success: '',
-  fail: '',
-})
+const statusMessage = ref({ success: '', fail: '' })
+const clearStatus = () => { statusMessage.value = { success: '', fail: '' } }
+
+const loading = ref(false)
 
 const sendForm = async () => {
   const isValid = await v$.value.$validate()
-
   if (!isValid) return
 
+  loading.value = true
   try {
-    const response = await fetch('http://localhost:3000/api/contact', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        firstName: formData.value.firstName,
+        name: `${formData.value.firstName} ${formData.value.lastName || ''}`.trim(),
         email: formData.value.email,
         message: formData.value.message,
+        honeypot: formData.value.honeypot || ''
       }),
     })
 
-    if (!response.ok) throw new Error('Failed to send email')
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}))
+      throw new Error(err?.message || 'Failed to send email')
+    }
 
     statusMessage.value.success = `✅ ${t('form.status.success')}`
-    formData.value = { firstName: '', email: '', message: '' }
-    setTimeout(() => (statusMessage.value = ''), 5000)
     statusMessage.value.fail = ''
+    formData.value = { firstName: '', lastName: '', email: '', message: '', honeypot: '' }
+    v$.value.$reset()
+    setTimeout(clearStatus, 5000)
   } catch (error) {
-    statusMessage.value.fail = `❌ ${t('form.status.fail')} ` + error.message
+    statusMessage.value.fail = `❌ ${t('form.status.fail')} ` + (error?.message || '')
     statusMessage.value.success = ''
+    setTimeout(clearStatus, 5000)
+  } finally {
+    loading.value = false
   }
-
-  v$.value.$reset()
 }
 
 const isShowStatus = computed(
@@ -153,7 +161,7 @@ const isShowStatus = computed(
 .form__btn {
   @include btn;
 
-  width: 100px;
+  min-width: 100px;
   margin: 0 auto;
 }
 </style>

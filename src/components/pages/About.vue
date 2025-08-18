@@ -3,7 +3,7 @@
     <PageTitle :title="$t('page.about')" />
     <div class="about__top flex mb-12 max-sm:flex-col">
       <img
-        src="../../assets/images/about.png"
+        src="@/assets/images/about.png"
         alt=""
         class="w-1/2 mr-6 max-sm:w-full"
         loading="lazy"

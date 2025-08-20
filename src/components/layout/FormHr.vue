@@ -70,7 +70,7 @@ const loading = ref(false)
 
 const rules = {
   inputHrName: { required, minLength: minLength(3) },
-  inputCompany: { required, minLength: minLength(10) },
+  inputCompany: { required, minLength: minLength(3) },
   inputEmail: { required, email },
 }
 
@@ -145,8 +145,9 @@ const onSubmit = async () => {
     inputEmail.value = ''
     statusMessage.value.success = `✅ ${t('form.status.success')}`
     statusMessage.value.fail = ''
+    v$.value.$reset()
     setTimeout(clearStatus, 5000)
-  } catch (e) {
+  } catch (error) {
     statusMessage.value.fail = `❌ ${t('form.status.fail')} ` + (error?.message || '')
     statusMessage.value.success = ''
     setTimeout(clearStatus, 5000)

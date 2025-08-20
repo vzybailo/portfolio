@@ -107,6 +107,7 @@ const sendForm = async () => {
       body: JSON.stringify({
         name: `${formData.value.firstName} ${formData.value.lastName || ''}`.trim(),
         email: formData.value.email,
+        subject: `[Portfolio] Message from ${formData.value.firstName || 'User'}`,
         message: formData.value.message,
         honeypot: formData.value.honeypot || ''
       }),

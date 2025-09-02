@@ -5,12 +5,14 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import path from 'path';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import tailwind from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
+    tailwind(),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(__dirname, 'src/assets/icons')],
       symbolId: 'icon-[name]',

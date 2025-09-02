@@ -3,13 +3,13 @@
     <li
       v-for="(filter, index) in filters"
       :key="index"
-      :class="{ active: activeFilter === filter.title }"
+      :class="{ active: activeFilter.includes(filter.title) }"
       class="filter__item cursor-pointer mr-2 px-2"
     >
       <span @click="selectFilter(filter.title)">{{ filter.title }}</span>
       <span
-        v-if="activeFilter === filter.title"
-        @click.stop.prevent="clearFilter"
+        v-if="activeFilter.includes(filter.title)"
+        @click.stop.prevent="clearFilter(filter.title)"
         class="ml-2 text-[#ff073a]"
       >
         x
@@ -24,14 +24,24 @@ const props = defineProps({
   activeFilter: String,
 })
 
-const emit = defineEmits(['update-filter'])
+const emit = defineEmits(['update-filters'])
 
 const selectFilter = (filter) => {
-  emit('update-filter', filter)
+  if (props.activeFilter.includes(filter)) {
+    emit(
+      'update-filters',
+      props.activeFilter.filter((f) => f !== filter),
+    )
+  } else {
+    emit('update-filters', [...props.activeFilter, filter])
+  }
 }
 
-const clearFilter = () => {
-  emit('update-filter', null)
+const clearFilter = (filter) => {
+  emit(
+    'update-filters',
+    props.activeFilter.filter((f) => f !== filter),
+  )
 }
 </script>
 

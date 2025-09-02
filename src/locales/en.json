@@ -51,10 +51,17 @@
     }
   },
   "projects": {
+    "showMore": "Show More",
+    "hide": "Hide",
     "githubFinder": "An application that allows you to find a user by their username and display all their repositories. Uses the GitHub API to fetch data.",
     "skVerh": "Corporate website for a construction company. Developed from scratch: implemented responsive layout, built a custom WordPress theme, integrated admin panel for easy content management.",
     "portfolio": "My personal portfolio website. Built from scratch with Vue 3, featuring responsive layout, language switcher (including English), dark mode, and dynamic routing.",
-    "golovko": "A website for an interior design studio. Custom post types were implemented for projects with individual fields like style, area, layout, and before/after photos. Easy-to-manage admin panel for content updates."
+    "golovko": "A website for an interior design studio. Custom post types were implemented for projects with individual fields like style, area, layout, and before/after photos. Easy-to-manage admin panel for content updates.",
+    "loneMagnet": {
+      "short": "A custom e-commerce website on WordPress + WooCommerce with a React-based image cropping app and full automation of order processing.",
+      "long": "This project showcases my ability to combine WordPress flexibility with custom React solutions.\n\n📌 Developed a custom WordPress theme with a responsive layout and optimized performance.\n\n📌 Configured WooCommerce and integrated multiple online payment methods.\n\n📌 Built a React app for image cropping: uploaded images are automatically applied as product thumbnails in the shopping cart.\n\n📌 Enhanced the admin experience: order details include image previews and the ability to download all files as a ZIP archive.\n\n📌 Implemented automatic PDF generation from uploaded images, making them ready for instant printing.\n\n📌 Integrated Telegram notifications so new orders are delivered to the admin in real time.",
+      "key": "Key achievements:\n\n🔹 Advanced WooCommerce customization and REST API usage.\n\n🔹 Integrating React apps into WordPress workflow.\n\n🔹 Automating business processes with PDF/ZIP generation and instant notifications."
+    }
   },
   "about": {
     "titleFirst": "I Break Things.",

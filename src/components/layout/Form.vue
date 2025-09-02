@@ -67,7 +67,7 @@ const formData = ref({
   lastName: '',
   email: '',
   message: '',
-  honeypot: ''
+  honeypot: '',
 })
 
 const rules = {
@@ -91,7 +91,9 @@ const getErrorMessage = (field) => {
 }
 
 const statusMessage = ref({ success: '', fail: '' })
-const clearStatus = () => { statusMessage.value = { success: '', fail: '' } }
+const clearStatus = () => {
+  statusMessage.value = { success: '', fail: '' }
+}
 
 const loading = ref(false)
 
@@ -109,7 +111,7 @@ const sendForm = async () => {
         email: formData.value.email,
         subject: `[Portfolio] Message from ${formData.value.firstName || 'User'}`,
         message: formData.value.message,
-        honeypot: formData.value.honeypot || ''
+        honeypot: formData.value.honeypot || '',
       }),
     })
 

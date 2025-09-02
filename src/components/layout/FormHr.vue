@@ -5,13 +5,29 @@
     <div class="mb-4">
       <p>
         {{ $t('contact.formHr.myName') }}
-        <input v-model="inputHrName" @blur="v$.inputHrName.$touch()" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.hrName')" />
-        <span class="form__error" v-if="v$.inputHrName.$error">{{ getErrorMessage('inputHrName')}}</span>
+        <input
+          v-model="inputHrName"
+          @blur="v$.inputHrName.$touch()"
+          class="form-hr__input"
+          type="text"
+          :placeholder="$t('contact.formHr.hrName')"
+        />
+        <span class="form__error" v-if="v$.inputHrName.$error">{{
+          getErrorMessage('inputHrName')
+        }}</span>
       </p>
       <p>
         {{ $t('contact.formHr.represent') }}
-        <input v-model="inputCompany" @blur="v$.inputCompany.$touch()" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.company')"  />
-        <span class="form__error" v-if="v$.inputCompany.$error">{{ getErrorMessage('inputCompany')}}</span>
+        <input
+          v-model="inputCompany"
+          @blur="v$.inputCompany.$touch()"
+          class="form-hr__input"
+          type="text"
+          :placeholder="$t('contact.formHr.company')"
+        />
+        <span class="form__error" v-if="v$.inputCompany.$error">{{
+          getErrorMessage('inputCompany')
+        }}</span>
       </p>
       {{ $t('contact.formHr.look') }}
       <select v-model="role" class="form-hr__input">
@@ -27,16 +43,40 @@
     </div>
     <div>{{ $t('contact.formHr.regards') }}</div>
     <div>
-      <input v-model="inputHrName" @blur="v$.inputHrName.$touch()" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.hrName')"  />
-      <span class="form__error" v-if="v$.inputHrName.$error">{{ getErrorMessage('inputHrName')}}</span>
+      <input
+        v-model="inputHrName"
+        @blur="v$.inputHrName.$touch()"
+        class="form-hr__input"
+        type="text"
+        :placeholder="$t('contact.formHr.hrName')"
+      />
+      <span class="form__error" v-if="v$.inputHrName.$error">{{
+        getErrorMessage('inputHrName')
+      }}</span>
     </div>
     <div>
-      <input v-model="inputCompany" @blur="v$.inputCompany.$touch()" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.company')"  />
-      <span class="form__error" v-if="v$.inputCompany.$error">{{ getErrorMessage('inputCompany')}}</span>
+      <input
+        v-model="inputCompany"
+        @blur="v$.inputCompany.$touch()"
+        class="form-hr__input"
+        type="text"
+        :placeholder="$t('contact.formHr.company')"
+      />
+      <span class="form__error" v-if="v$.inputCompany.$error">{{
+        getErrorMessage('inputCompany')
+      }}</span>
     </div>
     <div>
-      <input v-model="inputEmail" @blur="v$.inputEmail.$touch()" class="form-hr__input" type="text" :placeholder="$t('contact.formHr.contact')" />
-      <span class="form__error" v-if="v$.inputEmail.$error">{{ getErrorMessage('inputEmail')}}</span>
+      <input
+        v-model="inputEmail"
+        @blur="v$.inputEmail.$touch()"
+        class="form-hr__input"
+        type="text"
+        :placeholder="$t('contact.formHr.contact')"
+      />
+      <span class="form__error" v-if="v$.inputEmail.$error">{{
+        getErrorMessage('inputEmail')
+      }}</span>
     </div>
     <div class="quotes text-xl text-right">"</div>
     <div>
@@ -44,8 +84,9 @@
         v-if="isShowStatus"
         class="mb-2"
         :class="statusMessage.success ? 'text-green-500' : 'text-red-500'"
-        >{{ statusMessage.success || statusMessage.fail }}</div
       >
+        {{ statusMessage.success || statusMessage.fail }}
+      </div>
       <button class="form__btn text-white transition cursor-pointer uppercase" type="submit">
         {{ $t('form.send') }}
       </button>
@@ -63,7 +104,7 @@ const { t } = useI18n()
 
 const inputHrName = ref('')
 const inputCompany = ref('')
-const inputEmail = ref('')  
+const inputEmail = ref('')
 const role = ref('Frontend Developer')
 const statusMessage = ref({ success: '', fail: '' })
 const loading = ref(false)
@@ -74,7 +115,7 @@ const rules = {
   inputEmail: { required, email },
 }
 
-const v$ = useVuelidate(rules, {inputHrName, inputCompany, inputEmail})
+const v$ = useVuelidate(rules, { inputHrName, inputCompany, inputEmail })
 
 const getErrorMessage = (field) => {
   if (!v$.value[field].$error) return ''
@@ -93,12 +134,24 @@ const currentStack = computed(() => {
   return item ? item.stack : ''
 })
 
-const clearStatus = () => { statusMessage.value = { success: '', fail: '' } }
+const clearStatus = () => {
+  statusMessage.value = { success: '', fail: '' }
+}
 
 const techMap = [
-  { position: 'Frontend Developer', stack: 'JS, TS, HTML, CSS, React, Vue, Next.js, Tailwind, SCSS, Redux, GraphQL, REST, Jest' },
-  { position: 'FullStack Developer', stack: 'React, Next.js, TS, Node.js, Express, NestJS, SQL, MongoDB, REST, GraphQL, Docker, AWS, CI/CD' },
-  { position: 'WordPress Developer', stack: 'WordPress, PHP, MySQL, Custom Themes, Plugins, WooCommerce, JS, Tailwind, REST, WP-CLI' },
+  {
+    position: 'Frontend Developer',
+    stack: 'JS, TS, HTML, CSS, React, Vue, Next.js, Tailwind, SCSS, Redux, GraphQL, REST, Jest',
+  },
+  {
+    position: 'FullStack Developer',
+    stack:
+      'React, Next.js, TS, Node.js, Express, NestJS, SQL, MongoDB, REST, GraphQL, Docker, AWS, CI/CD',
+  },
+  {
+    position: 'WordPress Developer',
+    stack: 'WordPress, PHP, MySQL, Custom Themes, Plugins, WooCommerce, JS, Tailwind, REST, WP-CLI',
+  },
 ]
 
 const letterText = computed(() => {
@@ -133,7 +186,7 @@ const onSubmit = async () => {
         email: inputEmail.value,
         subject: `[Portfolio] ${role.value} — ${inputCompany.value || 'Company'}`,
         message: letterText.value,
-        honeypot: ''
+        honeypot: '',
       }),
     })
 

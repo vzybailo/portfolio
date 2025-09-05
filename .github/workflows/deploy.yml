@@ -1,26 +1,29 @@
-name: Simple Deploy to Hostinger
+name: Deploy Vue to Hostinger
 
 on:
   push:
     branches:
-      - main   # ветка для деплоя
+      - main   # ветка, откуда деплой
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Получаем код
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ Билдим Vue проект
-      - name: Build project
-        run: |
-          npm ci
-          npm run build
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-      # 3️⃣ Загружаем dist на Hostinger через SFTP
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
       - name: Deploy via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:

@@ -34,7 +34,7 @@ const projects = computed(() => [
   {
     title: 'LoneMagnet',
     description: t('projects.loneMagnet.short'),
-    img: 'src/assets/images/lonemagnet.png',
+    img: '/images/lonemagnet.png',
     stack: ['WordPress', 'React', 'JavaScript', 'PHP', 'Tailwind'],
     linkGithub: 'https://github.com/vzybailo/lone-magnet',
     linkLive: 'https://lonemagnet.com/',
@@ -42,18 +42,18 @@ const projects = computed(() => [
     longDescription: t('projects.loneMagnet.long'),
     keyAchievemnt: t('projects.loneMagnet.key'),
     images: [
-      { src: 'src/assets/images/lm1.png', alt: 'cropper app' },
-      { src: 'src/assets/images/lm2.png', alt: 'thumb in the cart' },
-      { src: 'src/assets/images/lm3.png', alt: 'order in admin' },
-      { src: 'src/assets/images/lm4.png', alt: 'generation pdf' },
-      { src: 'src/assets/images/lm5.png', alt: 'generation pdf' }
+      { src: '/images/lm1.png', alt: 'cropper app' },
+      { src: '/images/lm2.png', alt: 'thumb in the cart' },
+      { src: '/images/lm3.png', alt: 'order in admin' },
+      { src: '/images/lm4.png', alt: 'generation pdf' },
+      { src: '/images/lm5.png', alt: 'generation pdf' }
     ],
   },
   {
     title: 'My portfolio',
     description: t('projects.portfolio'),
-    img: 'src/assets/images/prt0.png',
-    stack: ['Vue', 'Tailwind', 'SCSS'],
+    img: '/images/prt0.png',
+    stack: ['Vue', 'Tailwind', 'SCSS', 'NodeJS', 'ExpressJS', 'RESTAPI'],
     linkGithub: 'https://github.com/vzybailo/portfolio',
     category: ['vue'],
   },
@@ -68,7 +68,7 @@ const projects = computed(() => [
   {
     title: 'Varvara Golovko - interior designer',
     description: t('projects.golovko'),
-    img: 'src/assets/images/g0.png',
+    img: '/images/g0.png',
     stack: ['HTML', 'SCSS', 'JavaScript', 'PHP', 'WordPress', 'ACF', 'Custom Posts'],
     linkLive: 'https://varvara-golovko.com/',
     category: ['wordpress'],
@@ -76,7 +76,7 @@ const projects = computed(() => [
   {
     title: 'SK-Verh',
     description: t('projects.skVerh'),
-    img: 'src/assets/images/sk0.png',
+    img: '/images/sk0.png',
     stack: ['HTML', 'SCSS', 'JavaScript', 'PHP', 'WordPress', 'ACF', 'Custom Theme'],
     linkLive: 'https://sk-verh.ru/',
     category: ['wordpress'],

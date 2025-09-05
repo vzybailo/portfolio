@@ -1,26 +1,42 @@
-name: Deploy to Hostinger
+name: Build and Deploy to Hostinger
 
 on:
   push:
     branches:
-      - main
+      - main   # деплой при пуше в main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Клонируем репозиторий
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy via SFTP
+      # 2️⃣ Устанавливаем Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20   # или версия, которая у тебя используется
+
+      # 3️⃣ Устанавливаем зависимости
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Сборка проекта
+      - name: Build project
+        run: npm run build       # создаст папку dist
+
+      # 5️⃣ Деплой через FTP
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: ${{ secrets.HOSTINGER_FTP_HOST }}
-          username: ${{ secrets.HOSTINGER_FTP_USER }}
+          server: ${{ secrets.HOSTINGER_FTP_HOST }}     # 212.85.29.58
+          username: ${{ secrets.HOSTINGER_FTP_USER }}   # u351959467.zybailo.com
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          port: 22
-          protocol: sftp
+          protocol: ftp
+          port: 21
           local-dir: dist
-          server-dir: /domains/zybailo.com/public_html
+          server-dir: public_html
           overwrite: true

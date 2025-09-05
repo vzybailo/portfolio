@@ -3,7 +3,7 @@
     <div class="welcome__switchers flex justify-end items-center py-5">
       <LangSwitcher />
       <DarkLightBtn />
-      <Icon v-if="isHomePage" name="login" class="login__icon" />
+      <Icon v-if="!isHomePage" name="login" class="login__icon" />
     </div>
     <div class="welcome__block flex justify-center items-center text-center">
       <div class="welcome__wrapper">

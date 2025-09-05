@@ -16,10 +16,12 @@ jobs:
       - name: Deploy via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v3.1.2
         with:
-          host: ${{ secrets.HOSTINGER_HOST }}
-          username: ${{ secrets.HOSTINGER_USER }}
-          password: ${{ secrets.HOSTINGER_PASSWORD }}
-          port: ${{ secrets.HOSTINGER_PORT }}    # 65002
+          ftp-server: ${{ secrets.HOSTINGER_FTP_HOST }}
+          ftp-username: ${{ secrets.HOSTINGER_FTP_USER }}
+          ftp-password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          local-dir: dist
+          server-dir: /domains/zybailo.com/public_html
+          method: sftp
           source: "dist/*"
           target: "/domains/zybailo.com/public_html"
           strip_components: 0

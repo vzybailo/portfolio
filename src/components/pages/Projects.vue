@@ -50,12 +50,14 @@ const projects = computed(() => [
     ],
   },
   {
-    title: 'My portfolio',
-    description: t('projects.portfolio'),
+    title: t('projects.portfolio.title'),
+    description: t('projects.portfolio.short'),
     img: '/images/prt0.png',
-    stack: ['Vue', 'Tailwind', 'SCSS', 'NodeJS', 'ExpressJS', 'RESTAPI'],
+    stack: ['Vue', 'Vite', 'Tailwind', 'SCSS', 'NodeJS', 'ExpressJS', 'RESTAPI'],
     linkGithub: 'https://github.com/vzybailo/portfolio',
     category: ['vue'],
+    longDescription: t('projects.portfolio.long'),
+    keyAchievemnt: t('projects.portfolio.key'),
   },
   {
     title: 'Github finder',

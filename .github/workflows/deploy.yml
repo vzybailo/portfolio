@@ -37,5 +37,5 @@ jobs:
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          local-dir: dist/
-          server-dir: /
+          local-dir: dist/*
+          server-dir: /domains/zybailo.com/public_html/

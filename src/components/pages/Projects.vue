@@ -65,6 +65,7 @@ const projects = computed(() => [
     img: githubFinderImg,
     stack: ['Vue', 'Axios', 'Github API', 'SCSS'],
     linkGithub: 'https://github.com/vzybailo/github-finder',
+    linkLive: 'https://gitfinder.zybailo.com/',
     category: ['vue'],
   },
   {

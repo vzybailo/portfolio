@@ -184,7 +184,7 @@ const onSubmit = async () => {
       body: JSON.stringify({
         name: inputHrName.value || 'Candidate',
         email: inputEmail.value,
-        subject: `[Portfolio] ${role.value} — ${inputCompany.value || 'Company'}`,
+        subject: `${role.value} — ${inputCompany.value || 'Company'}`,
         message: letterText.value,
         honeypot: '',
       }),

@@ -21,7 +21,7 @@
     <div class="mb-16">
       <div class="contact__hr-title text-base mb-4">
         {{ $t('contact.hrTitleFirst') }}
-        <a href="" class="contact__hr-cv">{{ $t('contact.hrTitleSec') }}</a>
+        <a href="/cv.pdf" class="contact__hr-cv" download>{{ $t('contact.hrTitleSec') }}</a>
       </div>
       <FormHr />
     </div>

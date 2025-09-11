@@ -16,6 +16,7 @@
     "email": "Email",
     "message": "Message",
     "send": "Send",
+    "sending": "Sending",
     "validation": {
       "required": "This field is required",
       "minLength": "Minimum length is {min} characters",

@@ -88,7 +88,7 @@
         {{ statusMessage.success || statusMessage.fail }}
       </div>
       <button class="form__btn text-white transition cursor-pointer uppercase" type="submit">
-        {{ $t('form.send') }}
+        {{ loading ? $t('form.sending') : $t('form.send') }}
       </button>
     </div>
   </form>

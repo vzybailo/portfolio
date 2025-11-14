@@ -11,7 +11,7 @@
           <div class="welcome__about flex flex-col items-center align-center">
             <img src="@/assets/images/me.jpeg" alt="" class="welcome__img" />
             <div class="welcome__name">{{ $t('name') }}</div>
-            <div class="welcome__position">Frontend Developer</div>
+            <div class="welcome__position">Full Stack Developer</div>
           </div>
           <div class="mb-6">
             <Socials />
